@@ -57,7 +57,7 @@
       # keep-sorted end
     ];
     home.shellAliases = {
-      n = "cd ~/Projects/erebus";
+      n = "cd ~/Projects/gaia";
     };
   };
 }

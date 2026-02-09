@@ -10,7 +10,7 @@
 }:
 let
   home = if stdenvNoCC.hostPlatform.isDarwin then "/Users/jamie" else "/home/jamie";
-  flakeLocation = "${home}/Projects/erebus";
+  flakeLocation = "${home}/Projects/gaia";
 in
 stdenvNoCC.mkDerivation (attrs: {
   pname = "eos-cli";
