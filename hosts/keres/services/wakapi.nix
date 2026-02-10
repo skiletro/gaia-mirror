@@ -14,7 +14,7 @@ in
   # ty https://github.com/not-matthias/dotfiles-nix/blob/cdd911cbdc585331cead87b7296a0e2e5206e257/modules/system/services/wakapi.nix#L49 :)
   services.wakapi = {
     enable = true;
-    environmentFiles = [ config.sops.secrets.wakapi-salt.path ];
+    environmentFiles = [ config.sops.secrets.wakapi-env.path ];
     settings = {
       server = {
         public_url = "https://${subdomain}.${domain}";
