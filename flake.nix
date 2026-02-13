@@ -6,6 +6,8 @@
     # keep-sorted start block=yes newline_separated=yes
     cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
+    bundle.url = "github:different-name/bundle-of-nix";
+
     cursors.url = "github:lilleaila/nix-cursors";
 
     disko = {
