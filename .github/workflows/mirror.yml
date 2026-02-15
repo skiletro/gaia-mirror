@@ -20,5 +20,5 @@ jobs:
         id: mirror
         uses: bridgelightcloud/github-mirror-action@v3
         with:
-          origin: 'git@tangled.org:skilet.ro/gaia'
+          origin: 'https://tangled.org/skilet.ro/gaia'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
