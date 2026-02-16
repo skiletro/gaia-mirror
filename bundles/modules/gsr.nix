@@ -3,11 +3,11 @@
   nixos =
     {
       config,
-      pkgs',
+      self',
       ...
     }:
     let
-      package = pkgs'.gpu-screen-recorder-ui.override {
+      package = self'.packages.gpu-screen-recorder-ui.override {
         inherit (config.security) wrapperDir;
       };
 
