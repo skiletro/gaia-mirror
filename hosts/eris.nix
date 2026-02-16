@@ -17,6 +17,7 @@
       proton.enable = true;
       spotify.enable = true;
       zed.enable = true;
+      gsr.enable = true;
       # keep-sorted end
     };
     state.system = "25.11";
