@@ -33,6 +33,7 @@
       lsfg.enable = true;
       nu.enable = true;
       proton.enable = true;
+      qbittorrent.enable = true;
       spotify.enable = true;
       steam.enable = true;
       wivrn.enable = true;
