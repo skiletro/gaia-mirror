@@ -76,6 +76,7 @@ lib.mkIf (config.gaia.desktop == "hyprland") {
         file-roller # archive manager (just use ouch on cli)
         gapless # music player
         gnome-disk-utility
+        gnome-logs
         hyprprop
         libheif # nautilus heic img preview
         libheif.out # nautilus heic img preview
@@ -272,6 +273,11 @@ lib.mkIf (config.gaia.desktop == "hyprland") {
               "initial_title ^(Signal Sticker Pack Creator)$"
             ]);
           };
+      };
+
+      xdg = {
+        enable = true;
+        autostart.enable = true;
       };
 
       dconf = {
