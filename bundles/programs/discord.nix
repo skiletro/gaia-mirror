@@ -11,12 +11,11 @@ bundleLib.mkEnableModule [ "gaia" "programs" "discord" ] {
     { pkgs, ... }:
     let
       inherit (pkgs.stdenvNoCC.hostPlatform) isLinux isDarwin;
-      equibop = self'.packages.equibop-patched;
     in
     {
       imports = [ inputs.nixcord.homeModules.nixcord ];
 
-      home.packages = lib.mkIf isDarwin [ equibop ];
+      home.packages = lib.mkIf isDarwin [ self'.packages.equibop-bin ];
 
       programs.nixcord = {
         enable = true;
@@ -27,7 +26,7 @@ bundleLib.mkEnableModule [ "gaia" "programs" "discord" ] {
         equibop = {
           enable = true;
           autoscroll.enable = true;
-          package = if isLinux then equibop else null;
+          package = if isLinux then pkgs.equibop else null;
         };
         config = {
           useQuickCss = true;
