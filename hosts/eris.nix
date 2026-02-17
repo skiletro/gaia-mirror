@@ -14,6 +14,7 @@
       flatpak.enable = true;
       kdeconnect.enable = true;
       printing.enable = true;
+      wireguard.enable = true;
       # keep-sorted end
     };
     programs = {
