@@ -1,0 +1,38 @@
+{ self, ... }:
+let
+  flakeConfig = (import "${self}/flake.nix").nixConfig;
+
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
+
+  nix = {
+    enable = true;
+    channel.enable = false;
+    settings = {
+      extra-substituters = flakeConfig.extra-trusted-substituters;
+      inherit (flakeConfig) extra-trusted-substituters extra-trusted-public-keys;
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      trusted-users = [
+        "jamie"
+        "root"
+        "@wheel"
+      ]; # Fixes some "cannot connect to socket" issues
+      warn-dirty = false;
+      http-connections = 50;
+      log-lines = 50;
+      builders-use-substitutes = true;
+      accept-flake-config = true;
+    };
+  };
+in
+{
+  nixos = { inherit nix nixpkgs; };
+
+  darwin = { inherit nix nixpkgs; };
+
+  home-manager = { inherit nixpkgs; };
+}
