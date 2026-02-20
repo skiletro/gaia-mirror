@@ -36,6 +36,7 @@
     { osConfig, ... }:
     {
       imports = lib.singleton inputs.steam-config-nix.homeModules.default;
+
       programs.steam.config = {
         enable = lib.mkIf osConfig.programs.steam.enable true;
         closeSteam = true;
@@ -43,5 +44,7 @@
       };
     };
 
-  darwin = throw "gaia: 'steam' is not yet available on macos.";
+  darwin.options.programs.steam.enable = lib.mkOption {
+    default = false;
+  };
 }
