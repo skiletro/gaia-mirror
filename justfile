@@ -1,5 +1,5 @@
 export NH_FLAKE := justfile_directory()
-RUNNER := if trim(`command -v gamemoderun`) != "" { "gamemoderun" } else { "" }
+RUNNER := `sh -c "command -v gamemoderun > /dev/null && echo gamemoderun || echo"`
 
 [private]
 default:
