@@ -13,15 +13,7 @@ bundleLib.mkEnableModule [ "gaia" "programs" "helix" ] {
     {
       programs.helix = {
         enable = true;
-        package = inputs'.helix.packages.helix.overrideAttrs (_: {
-          patches = [
-            # Keep LSP completions active when typing server-trigger characters
-            (pkgs.fetchurl {
-              url = "https://patch-diff.githubusercontent.com/raw/helix-editor/helix/pull/14556.patch";
-              sha256 = "sha256-YLohyMbQMKcOu16BhyJ0jwTfjX0JkPuX5z7xgwI+AMc=";
-            })
-          ];
-        });
+        package = inputs'.helix.packages.helix;
         extraPackages = with pkgs; [
           # keep-sorted start
           bash-language-server # Bash
