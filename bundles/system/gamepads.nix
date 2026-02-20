@@ -1,4 +1,5 @@
-{
+{ bundleLib, ... }:
+bundleLib.mkEnableModule [ "gaia" "system" "gamepads" ] {
 
   nixos = {
     hardware = {

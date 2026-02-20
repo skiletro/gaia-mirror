@@ -6,6 +6,7 @@
       # keep-sorted start
       bluetooth.enable = true;
       fonts.enable = true;
+      gamepads.enable = true;
       virtualisation.enable = true;
       # keep-sorted end
     };
