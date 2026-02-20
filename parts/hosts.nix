@@ -12,10 +12,10 @@
           systemPlatform = "nixos";
         };
 
-        # keres = {
-        #   system = "aarch64-linux";
-        #   systemPlatform = "nixos";
-        # };
+        keres = {
+          system = "aarch64-linux";
+          systemPlatform = "nixos";
+        };
 
         moirai = {
           system = "aarch64-darwin";
