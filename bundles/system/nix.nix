@@ -10,8 +10,8 @@ let
     enable = true;
     channel.enable = false;
     settings = {
-      substituters = flakeConfig.trusted-substituters;
-      inherit (flakeConfig) trusted-substituters trusted-public-keys;
+      extra-substituters = flakeConfig.extra-trusted-substituters;
+      inherit (flakeConfig) extra-trusted-substituters extra-trusted-public-keys;
       experimental-features = [
         "nix-command"
         "flakes"
