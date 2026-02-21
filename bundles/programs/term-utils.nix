@@ -13,7 +13,6 @@ bundleLib.mkEnableModule [ "gaia" "programs" "term-utils" ] {
         fzf # fuzzy finder
         gdu # disk utiliser
         heh # hex editor
-        helix
         imagemagick
         jq # json processor
         just # make file but better
