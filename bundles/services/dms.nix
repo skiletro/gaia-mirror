@@ -47,6 +47,8 @@ bundleLib.mkEnableModule [ "gaia" "services" "dms" ] {
           modalDarkenBackground = false;
           enableRippleEffects = false;
 
+          osdMediaPlaybackEnabled = false;
+
           animationSpeed = 4;
           customAnimationDuration = 400; # ms
           wallpaperFillMode = "Fill";
