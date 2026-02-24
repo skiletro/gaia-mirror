@@ -46,11 +46,12 @@ lib.mkIf (config.gaia.desktop == "aerospace") {
 
           gaps =
             let
-              padding = 5;
+              padding = 4;
+              inner_padding = padding + 2; # to offset jankyborders
             in
             {
-              inner = lib.genAttrs [ "horizontal" "vertical" ] (_: padding + 4);
               outer = lib.genAttrs [ "top" "left" "bottom" "right" ] (_: padding);
+              inner = lib.genAttrs [ "horizontal" "vertical" ] (_: inner_padding);
             };
 
           # put the second workspace on laptop in case of docked.
@@ -58,7 +59,19 @@ lib.mkIf (config.gaia.desktop == "aerospace") {
 
           mode = {
             main.binding = lib.mapAttrs' (n: v: lib.nameValuePair "cmd-${n}" v) {
-              enter = "exec-and-forget open -na Kitty.app";
+              enter = ''
+                exec-and-forget osascript -e '
+                  tell application "kitty"
+                      if it is running
+                          tell application "System Events" to tell process "kitty"
+                              click menu item "New OS Window" of menu "Shell" of menu bar 1
+                          end tell
+                      else
+                          activate
+                      end if
+                  end tell
+                '
+              '';
 
               ctrl-e = "exec-and-forget open -na Finder.app";
               ctrl-f = "exec-and-forget open -na Helium.app";
