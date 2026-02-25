@@ -7,7 +7,7 @@
 }:
 bundleLib.mkEnableModule [ "gaia" "programs" "steam" ] {
 
-  gaia.autoStart = [ "steam --silent --console" ];
+  gaia.autoStart = [ "steam -silent -console" ];
 
   nixos =
     { pkgs, ... }:
