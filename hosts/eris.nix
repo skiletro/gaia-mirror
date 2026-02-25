@@ -5,6 +5,7 @@
     system = {
       # keep-sorted start
       bluetooth.enable = true;
+      emulation.enable = true;
       fonts.enable = true;
       gamepads.enable = true;
       greeter.enable = true;
