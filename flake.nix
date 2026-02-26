@@ -14,11 +14,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    dms-plugin-registry = {
-      url = "github:AvengeMedia/dms-plugin-registry";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     dms.url = "github:AvengeMedia/DankMaterialShell";
 
     drasl.url = "github:unmojang/drasl";
@@ -53,11 +48,6 @@
     };
 
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
-
-    nix-rosetta-builder = {
-      url = "github:cpick/nix-rosetta-builder";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     nixcord = {
       url = "github:kaylorben/nixcord";

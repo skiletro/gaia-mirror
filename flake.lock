@@ -312,26 +312,6 @@
         "type": "github"
       }
     },
-    "dms-plugin-registry": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1771463846,
-        "narHash": "sha256-akisqsuX+C5f3pZkW9gfcLPvbc95nonRbIH901sQpzs=",
-        "owner": "AvengeMedia",
-        "repo": "dms-plugin-registry",
-        "rev": "53b55baa5e2f5cc71d06b07100d7bb4a44a1c0bd",
-        "type": "github"
-      },
-      "original": {
-        "owner": "AvengeMedia",
-        "repo": "dms-plugin-registry",
-        "type": "github"
-      }
-    },
     "drasl": {
       "inputs": {
         "nixpkgs": "nixpkgs_4"
@@ -1353,26 +1333,6 @@
         "type": "github"
       }
     },
-    "nix-rosetta-builder": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1770491098,
-        "narHash": "sha256-ZfhynJqgV3A9hEivcgOEZa+TZnJPc26lIUjzKsSchgI=",
-        "owner": "cpick",
-        "repo": "nix-rosetta-builder",
-        "rev": "50e6070082e0b4fbaf67dd8f346892a1a9ed685c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "cpick",
-        "repo": "nix-rosetta-builder",
-        "type": "github"
-      }
-    },
     "nixcord": {
       "inputs": {
         "flake-compat": [],
@@ -1705,7 +1665,6 @@
         "cursors": "cursors",
         "disko": "disko",
         "dms": "dms",
-        "dms-plugin-registry": "dms-plugin-registry",
         "drasl": "drasl",
         "flake-parts": "flake-parts_2",
         "helix": "helix",
@@ -1715,7 +1674,6 @@
         "millennium": "millennium",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
-        "nix-rosetta-builder": "nix-rosetta-builder",
         "nixcord": "nixcord",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_6",
