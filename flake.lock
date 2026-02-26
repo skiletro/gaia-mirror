@@ -312,6 +312,26 @@
         "type": "github"
       }
     },
+    "dms-plugin-registry": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1771463846,
+        "narHash": "sha256-akisqsuX+C5f3pZkW9gfcLPvbc95nonRbIH901sQpzs=",
+        "owner": "AvengeMedia",
+        "repo": "dms-plugin-registry",
+        "rev": "53b55baa5e2f5cc71d06b07100d7bb4a44a1c0bd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AvengeMedia",
+        "repo": "dms-plugin-registry",
+        "type": "github"
+      }
+    },
     "drasl": {
       "inputs": {
         "nixpkgs": "nixpkgs_4"
@@ -1665,6 +1685,7 @@
         "cursors": "cursors",
         "disko": "disko",
         "dms": "dms",
+        "dms-plugin-registry": "dms-plugin-registry",
         "drasl": "drasl",
         "flake-parts": "flake-parts_2",
         "helix": "helix",
