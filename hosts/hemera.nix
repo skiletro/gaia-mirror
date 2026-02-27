@@ -1,43 +1,48 @@
-{ inputs, ... }:
+{ inputs, lib, ... }:
 {
   gaia.state.system = "26.05";
 
-  nixos = {
-    imports = [
-      inputs.disko.nixosModules.default
-    ];
+  nixos =
+    { pkgs, ... }:
+    {
+      imports = [
+        inputs.disko.nixosModules.default
+      ];
 
-    disko.devices = {
-      disk = {
-        main = {
-          type = "disk";
-          device = "/dev/nvme0n1";
-          content = {
-            type = "gpt";
-            partitions = {
-              ESP = {
-                priority = 1;
-                name = "ESP";
-                start = "1M";
-                end = "500M";
-                type = "EF00";
-                content = {
-                  type = "filesystem";
-                  format = "vfat";
-                  mountpoint = "/boot";
-                  mountOptions = [ "umask=0077" ];
+      boot.kernelPackages = lib.mkForce pkgs.linuxPackages;
+
+      disko.devices = {
+        disk = {
+          main = {
+            type = "disk";
+            device = "/dev/nvme0n1";
+            content = {
+              type = "gpt";
+              partitions = {
+                ESP = {
+                  priority = 1;
+                  name = "ESP";
+                  start = "1M";
+                  end = "500M";
+                  type = "EF00";
+                  content = {
+                    type = "filesystem";
+                    format = "vfat";
+                    mountpoint = "/boot";
+                    mountOptions = [ "umask=0077" ];
+                  };
                 };
-              };
-              root = {
-                size = "100%";
-                content = {
-                  type = "btrfs";
-                  extraArgs = [ "-f" ]; # Override existing partition
-                  mountpoint = "/";
-                  mountOptions = [
-                    "compress-force=zstd"
-                    "noatime"
-                  ];
+                root = {
+                  size = "100%";
+                  content = {
+                    type = "btrfs";
+                    extraArgs = [ "-f" ]; # Override existing partition
+                    mountpoint = "/";
+                    mountOptions = [
+                      "compress-force=zstd"
+                      "noatime"
+                    ];
+                  };
                 };
               };
             };
@@ -45,5 +50,4 @@
         };
       };
     };
-  };
 }
