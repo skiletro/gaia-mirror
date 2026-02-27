@@ -115,6 +115,12 @@ deploy system: (_m "deploying")
 pkg pkg:
     nix build .#{{ pkg }}
 
+[doc("build the iso host")]
+[group("package")]
+[no-exit-message]
+iso: _format _stage
+    nixos-rebuild build-image --flake .#iso --image-variant iso
+
 #
 # Housekeeping Recipes
 #
