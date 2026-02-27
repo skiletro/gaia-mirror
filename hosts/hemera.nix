@@ -26,6 +26,8 @@
 
       services.tlp.enable = true;
 
+      networking.wireless.enable = true;
+
       disko.devices = {
         disk = {
           main = {
