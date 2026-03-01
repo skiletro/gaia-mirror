@@ -21,11 +21,6 @@ default:
 
 [no-exit-message]
 [private]
-_:
-    $EDITOR ./.justfile
-
-[no-exit-message]
-[private]
 _m message:
     echo -e "\e[35m>\e[0m {{ message }}..."
 

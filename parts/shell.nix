@@ -15,9 +15,16 @@
           ssh-to-age
           # keep-sorted end
         ];
+
+        JUST_LIST_HEADING = "";
+        JUST_LIST_PREFIX = "";
+        
         shellHook = ''
+          echo
           just
-          git status
+          echo
+          git status -sb
+          echo
         '';
       };
     };
