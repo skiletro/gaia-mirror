@@ -18,8 +18,12 @@
       domain = "warm.vodka";
 
       deployments = {
+        pocket-id = {
+          subdomain = "sso";
+          port = 1411;
+        };
         karakeep = {
-          subdomain = "kk";
+          subdomain = "karakeep";
           port = 3001;
         };
         tangled = {
@@ -27,33 +31,53 @@
           port = 3050;
         };
         wakapi = {
-          subdomain = "wt";
+          subdomain = "wt"; # TODO: add OIDC
           port = 3009;
         };
         drasl = {
-          subdomain = "ma";
+          subdomain = "drasl";
           port = 3002;
         };
       };
     in
     {
-      # Deployments
-      sops.secrets."wakapi-env" = {
-        owner = "wakapi";
-        group = "wakapi";
-        mode = "0400";
+      # Secrets
+      sops.secrets = {
+        "wakapi-env" = {
+          owner = "wakapi";
+          group = "wakapi";
+          mode = "0400";
+        };
+        "pocketid-encryption-key" = {
+          owner = "pocket-id";
+          group = "pocket-id";
+        };
+        "pocketid-drasl-secret" = {
+          mode = "444";
+        };
+        "pocketid-karakeep-secret" = { };
       };
+
+      # Deployments
 
       services.karakeep = {
         enable = true;
         meilisearch.enable = false; # what is the POINT of stateVersion if it doesn't WORK
-        extraEnvironment = with deployments.karakeep; {
-          NEXTAUTH_URL = "https://${subdomain}.${domain}";
-          PORT = toString port;
-          DISABLE_SIGNUPS = "true";
-          DISABLE_NEW_RELEASE_CHECK = "true";
-        };
+        environmentFile = config.sops.templates."karakeep.env".path;
       };
+
+      sops.templates."karakeep.env".content = with deployments.karakeep; ''
+        NEXTAUTH_URL="https://${subdomain}.${domain}"
+        PORT="${toString port}"
+        DISABLE_PASSWORD_AUTH=true
+        DISABLE_NEW_RELEASE_CHECK=true
+
+        OAUTH_AUTO_REDIRECT=true
+        OAUTH_WELLKNOWN_URL="https://sso.warm.vodka/.well-known/openid-configuration"
+        OAUTH_PROVIDER_NAME="Methanol"
+        OAUTH_CLIENT_SECRET="${config.sops.placeholder.pocketid-karakeep-secret}"
+        OAUTH_CLIENT_ID="f9713737-4a5a-4aed-b221-642b15850415"
+      '';
 
       services.tangled.knot = {
         enable = true;
@@ -94,12 +118,38 @@
         settings = with deployments.drasl; {
           Domain = "${subdomain}.${domain}";
           BaseURL = "https://${subdomain}.${domain}";
+          InstanceName = "Martini";
+          ApplicationOwner = "warm.vodka";
           ListenAddress = "0.0.0.0:${toString port}";
           DefaultAdmins = [ "jamie" ];
-          RegistrationNewPlayer = {
-            Allow = true;
-            RequireInvite = true;
-          };
+          AllowPasswordLogin = false;
+          RegistrationOIDC = [
+            {
+              Name = "Methanol";
+              Issuer = "https://sso.warm.vodka";
+              ClientID = "9e7a2c41-a937-47c1-bb6b-c100f21e4be9";
+              ClientSecretFile = config.sops.secrets.pocketid-drasl-secret.path;
+              PKCE = true;
+              AllowChoosingPlayerName = true;
+            }
+          ];
+        };
+      };
+
+      services.pocket-id = {
+        enable = true;
+        settings = with deployments.pocket-id; {
+          TRUST_PROXY = true;
+          ANALYTICS_DISABLED = true;
+          APP_URL = "https://${subdomain}.${domain}";
+
+          # UI
+          UI_CONFIG_DISABLED = true;
+          APP_NAME = "Methanol";
+          ALLOW_USER_SIGNUPS = "withToken";
+        };
+        credentials = {
+          ENCRYPTION_KEY = config.sops.secrets.pocketid-encryption-key.path;
         };
       };
 
