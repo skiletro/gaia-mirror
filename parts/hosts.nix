@@ -39,7 +39,7 @@
       users.${user}.hosts = lib.mapAttrs (host: attrs: {
         imports = [
           (inputs.import-tree ../bundles)
-          ../hosts/${host}.nix
+          (inputs.import-tree ../hosts/${host})
           {
             ${attrs.systemPlatform} = {
               nixpkgs.hostPlatform = attrs.system;
