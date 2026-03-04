@@ -6,10 +6,10 @@
   pkg-config,
   meson,
   ninja,
-  libX11,
-  libXrender,
-  libXrandr,
-  libXext,
+  libx11,
+  libxrender,
+  libxrandr,
+  libxext,
   libglvnd,
   wayland,
   wayland-scanner,
@@ -17,13 +17,13 @@
   ...
 }:
 
-stdenv.mkDerivation rec {
+stdenv.mkDerivation (finalAttrs: {
   pname = "gpu-screen-recorder-notification";
   version = "1.1.0";
 
   src = fetchgit {
     url = "https://repo.dec05eba.com/gpu-screen-recorder-notification";
-    tag = version;
+    tag = finalAttrs.version;
     hash = "sha256-ODifZ046DEBNiGT3+S6pQyF8ekrb6LIHWton8nv1MBo=";
   };
 
@@ -41,10 +41,10 @@ stdenv.mkDerivation rec {
   ];
 
   buildInputs = [
-    libX11
-    libXrender
-    libXrandr
-    libXext
+    libx11
+    libxrender
+    libxrandr
+    libxext
     libglvnd
     wayland
     wayland-scanner
@@ -60,4 +60,4 @@ stdenv.mkDerivation rec {
     maintainers = with lib.maintainers; [ js6pak ];
     platforms = lib.platforms.linux;
   };
-}
+})
