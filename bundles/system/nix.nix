@@ -2,37 +2,60 @@
 let
   flakeConfig = (import "${self}/flake.nix").nixConfig;
 
-  nixpkgs.config = {
-    allowUnfree = true;
-  };
-
-  nix = {
-    enable = true;
-    channel.enable = false;
-    settings = {
-      extra-substituters = flakeConfig.extra-trusted-substituters;
-      inherit (flakeConfig) extra-trusted-substituters extra-trusted-public-keys;
-      experimental-features = [
-        "nix-command"
-        "flakes"
+  settings = pkgs: {
+    nixpkgs = {
+      overlays = [
+        (_final: prev: {
+          inherit (prev.lixPackageSets.stable)
+            nixpkgs-review
+            nix-eval-jobs
+            nix-fast-build
+            colmena
+            ;
+        })
       ];
-      trusted-users = [
-        "jamie"
-        "root"
-        "@wheel"
-      ]; # Fixes some "cannot connect to socket" issues
-      warn-dirty = false;
-      http-connections = 50;
-      log-lines = 50;
-      builders-use-substitutes = true;
-      accept-flake-config = true;
+      config = {
+        allowUnfree = true;
+      };
+    };
+
+    nix = {
+      enable = true;
+      package = pkgs.lixPackageSets.stable.lix;
+      channel.enable = false;
+      settings = {
+        extra-substituters = flakeConfig.extra-trusted-substituters;
+        inherit (flakeConfig) extra-trusted-substituters extra-trusted-public-keys;
+        experimental-features = [
+          "nix-command"
+          "flakes"
+        ];
+        trusted-users = [
+          "jamie"
+          "root"
+          "@wheel"
+        ]; # Fixes some "cannot connect to socket" issues
+        warn-dirty = false;
+        http-connections = 50;
+        log-lines = 50;
+        builders-use-substitutes = true;
+        accept-flake-config = true;
+      };
     };
   };
 in
 {
-  nixos = { inherit nix nixpkgs; };
+  nixos =
+    { pkgs, ... }:
+    {
+      inherit (settings pkgs) nix nixpkgs;
+    };
 
-  darwin = { inherit nix nixpkgs; };
+  darwin =
+    { pkgs, ... }:
+    {
+      inherit (settings pkgs) nix nixpkgs;
+    };
 
-  home-manager = { inherit nixpkgs; };
+  home-manager.nixpkgs.config.allowUnfree = true;
 }
