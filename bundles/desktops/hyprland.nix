@@ -188,10 +188,9 @@ lib.mkIf (config.gaia.desktop == "hyprland") {
               };
             };
 
-            dwindle = {
-              split_width_multiplier = 1.35;
-              single_window_aspect_ratio = "16 9";
-            };
+            dwindle.split_width_multiplier = 1.35;
+
+            layout.single_window_aspect_ratio = "16 9";
 
             bezier = [
               "defout, 0.16, 1, 0.3, 1"
