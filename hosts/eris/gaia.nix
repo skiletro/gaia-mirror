@@ -49,4 +49,18 @@
     };
     state.system = "25.11";
   };
+
+  nixos = {pkgs, ...}: {
+    environment.systemPackages = with pkgs; [
+      via
+      vial
+      qmk-udev-rules
+    ];
+
+    services.udev.packages = with pkgs; [
+      via
+      vial
+      qmk-udev-rules
+    ];
+  };
 }
