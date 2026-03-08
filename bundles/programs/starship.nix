@@ -107,8 +107,7 @@ bundleLib.mkEnableModule [ "gaia" "programs" "starship" ] {
           c = using " " "blue";
           golang = using "" "blue";
           docker_context = using " " "blue";
-
-          nix_shell = via "  " "blue";
+          nix_shell = via " " "blue";
 
           git_branch = {
             symbol = "󰊢 ";
