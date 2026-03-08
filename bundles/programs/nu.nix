@@ -1,6 +1,8 @@
 { bundleLib, lib, ... }:
 bundleLib.mkEnableModule [ "gaia" "programs" "nu" ] {
 
+  gaia.programs.starship.enable = true;
+
   home-manager =
     { config, ... }:
     {
