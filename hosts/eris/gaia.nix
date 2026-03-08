@@ -43,24 +43,11 @@
       spotify.enable = true;
       steam.enable = true;
       term-utils.enable = true;
+      vial.enable = true;
       wivrn.enable = true;
       # zed.enable = true;
       # keep-sorted end
     };
     state.system = "25.11";
-  };
-
-  nixos = {pkgs, ...}: {
-    environment.systemPackages = with pkgs; [
-      via
-      vial
-      qmk-udev-rules
-    ];
-
-    services.udev.packages = with pkgs; [
-      via
-      vial
-      qmk-udev-rules
-    ];
   };
 }
