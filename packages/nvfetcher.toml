@@ -11,13 +11,13 @@ fetch.url = "https://github.com/Equicord/Equibop/releases/download/v$ver/Equibop
 src.github = "Equicord/Equibop"
 src.prefix = "v"
 
+[helium-appimage]
+fetch.url = "https://github.com/imputnet/helium-linux/releases/download/$ver/helium-$ver-x86_64.AppImage"
+src.github = "imputnet/helium-linux"
+
 [helium-dmg]
 fetch.url = "https://github.com/imputnet/helium-macos/releases/download/$ver/helium_$ver_arm64-macos.dmg"
 src.github = "imputnet/helium-macos"
-
-[helium-tarball]
-fetch.url = "https://github.com/imputnet/helium-linux/releases/download/$ver/helium-$ver-x86_64_linux.tar.xz"
-src.github = "imputnet/helium-linux"
 
 [liga-sf-mono-nerd-font]
 fetch.git = "https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized.git"

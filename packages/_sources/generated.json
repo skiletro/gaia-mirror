@@ -49,6 +49,21 @@
         },
         "version": "3.1.9"
     },
+    "helium-appimage": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "helium-appimage",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-N5gdWuxOrIudJx/4nYo4/SKSxakpTFvL4zzByv6Cnug=",
+            "type": "url",
+            "url": "https://github.com/imputnet/helium-linux/releases/download/0.9.4.1/helium-0.9.4.1-x86_64.AppImage"
+        },
+        "version": "0.9.4.1"
+    },
     "helium-dmg": {
         "cargoLock": null,
         "date": null,
@@ -61,21 +76,6 @@
             "sha256": "sha256-miPsputiNQwAm867O5I+OBZAr52OzzIFD1UHMzWDMVQ=",
             "type": "url",
             "url": "https://github.com/imputnet/helium-macos/releases/download/0.9.4.1/helium_0.9.4.1_arm64-macos.dmg"
-        },
-        "version": "0.9.4.1"
-    },
-    "helium-tarball": {
-        "cargoLock": null,
-        "date": null,
-        "extract": null,
-        "name": "helium-tarball",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-qXuDUtank46O87jASxczmVMk0iD4JaZi2j9LSBe9VCM=",
-            "type": "url",
-            "url": "https://github.com/imputnet/helium-linux/releases/download/0.9.4.1/helium-0.9.4.1-x86_64_linux.tar.xz"
         },
         "version": "0.9.4.1"
     },
