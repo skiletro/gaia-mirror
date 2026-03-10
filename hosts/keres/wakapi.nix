@@ -7,6 +7,12 @@
       port = 3009;
     in
     {
+      sops.secrets."wakapi-env" = {
+        owner = "wakapi";
+        group = "wakapi";
+        mode = "0400";
+      };
+
       services.wakapi = {
         enable = true;
         environmentFiles = [ config.sops.secrets.wakapi-env.path ];
