@@ -132,7 +132,9 @@ bundleLib.mkEnableModule [ "gaia" "programs" "starship" ] {
             deleted = " ";
           };
 
-          # battery.disabled = true;
+          cmd_duration = {
+            format = " took [$duration]($style) ";
+          };
         };
     };
   };
