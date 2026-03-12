@@ -18,14 +18,14 @@ bundleLib.mkEnableModule [ "gaia" "system" "greeter" ] {
               pointer_accel 0.6
             }
 
-            seat * xcursor_theme ${config.stylix.cursor.name} ${toString config.stylix.cursor.size}
+            seat seat0 xcursor_theme ${config.stylix.cursor.name} ${toString config.stylix.cursor.size}
           '';
         };
         configHome = "/home/jamie";
       };
       programs.sway = {
         enable = true;
-        extraPackages = lib.mkDefault [ ];
+        extraPackages = lib.mkDefault [ config.stylix.cursor.package ];
       };
     };
 

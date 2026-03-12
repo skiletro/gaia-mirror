@@ -1,5 +1,4 @@
-# The purpose of this file is to act as a sort of template to allow for quicker bundle creation.
-{ bundleLib, ... }:
+{ bundleLib, self', ... }:
 bundleLib.mkEnableModule [ "gaia" "system" "fonts" ] {
 
   nixos = {
@@ -23,6 +22,7 @@ bundleLib.mkEnableModule [ "gaia" "system" "fonts" ] {
         noto-fonts
         noto-fonts-cjk-sans # Japanese, Korean, Chinese, etc
         noto-fonts-color-emoji
+        self'.packages.pragmata
       ];
     };
 

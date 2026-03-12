@@ -11,13 +11,13 @@ let
     polarity = "dark";
     fonts = {
       sansSerif = {
-        package = pkgs.work-sans;
-        name = "Work Sans";
+        package = self'.packages.space-grotesk;
+        name = "Space Grotesk";
       };
       serif = config.stylix.fonts.sansSerif; # Set serif font to the same as the sans-serif
       monospace = {
-        package = self'.packages.liga-sf-mono-nerd-font;
-        name = "Liga SFMono Nerd Font";
+        package = self'.packages.pragmata;
+        name = "LigaPragmataProMonoNerdFontPropo";
       };
       emoji = {
         package = self'.packages.apple-emoji;
@@ -53,12 +53,12 @@ in
         cursor = {
           package =
             with config.lib.stylix.colors.withHashtag;
-            inputs'.cursors.packages.bibata-modern-cursor.override {
+            inputs'.cursors.packages.apple-cursor.override {
               background_color = base00;
               outline_color = base06;
               accent_color = base00;
             };
-          name = "Bibata-Modern-Custom";
+          name = "Apple-Custom";
           size = 24;
         };
 
