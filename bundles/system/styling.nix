@@ -80,6 +80,8 @@ in
         dark = "MoreWaita";
         light = "MoreWaita";
       };
+
+      stylix.fonts.sizes.terminal = lib.mkIf pkgs.stdenvNoCC.isDarwin (lib.mkForce 14); # macos scaling is weird.
     };
 
   darwin =
