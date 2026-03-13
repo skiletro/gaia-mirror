@@ -36,6 +36,7 @@
       libreoffice.enable = true;
       lsfg.enable = true;
       nu.enable = true;
+      obs.enable = true;
       proton.enable = true;
       qbittorrent.enable = true;
       rustdesk.enable = true;
