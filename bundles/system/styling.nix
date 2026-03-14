@@ -16,8 +16,8 @@ let
       };
       serif = config.stylix.fonts.sansSerif; # Set serif font to the same as the sans-serif
       monospace = {
-        package = self'.packages.pragmata;
-        name = "LigaPragmataProMonoNerdFontPropo";
+        package = self'.packages.pragmata-pro;
+        name = "PragmataPro Mono Liga";
       };
       emoji = {
         package = self'.packages.apple-emoji;
@@ -28,7 +28,7 @@ let
         applications = 10;
         desktop = 10;
         popups = 10;
-        terminal = 12;
+        terminal = 14;
       };
     };
     image =
@@ -81,7 +81,7 @@ in
         light = "MoreWaita";
       };
 
-      stylix.fonts.sizes.terminal = lib.mkIf pkgs.stdenvNoCC.isDarwin (lib.mkForce 14); # macos scaling is weird.
+      stylix.fonts.sizes.terminal = lib.mkIf pkgs.stdenvNoCC.isDarwin (lib.mkForce 16); # macos scaling is weird.
     };
 
   darwin =

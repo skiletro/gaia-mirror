@@ -22,7 +22,8 @@ bundleLib.mkEnableModule [ "gaia" "system" "fonts" ] {
         noto-fonts
         noto-fonts-cjk-sans # Japanese, Korean, Chinese, etc
         noto-fonts-color-emoji
-        self'.packages.pragmata
+        self'.packages.pragmata-pro
+        self'.packages.pragmata-pro-nf
       ];
     };
 
