@@ -5,7 +5,6 @@ bundleLib.mkEnableModule [ "gaia" "system" "gamepads" ] {
     hardware = {
       xone.enable = true;
       xpadneo.enable = true;
-      xpad-noone.enable = true;
     };
   };
 
