@@ -48,33 +48,6 @@
           ''
             reverse_proxy :${toString port}
           '';
-
-        "${domain}" = {
-          serverAliases = [ "www.${domain}" ];
-          extraConfig =
-            # caddyfile
-            ''
-              handle /.well-known/webfinger {
-                header Content-Type application/jrd+json
-                  respond `
-                    {
-                      "subject": "{query.resource}",
-                      "links": [
-                        {
-                          "rel": "http://openid.net/specs/connect/1.0/issuer",
-                          "href": "https://${subdomain}.${domain}"
-                        }
-                      ]
-                    }
-                  ` 200
-              }
-
-              handle {
-                header Content-Type text/html
-                respond `${builtins.readFile ./landing.html}`
-              }
-            '';
-        };
       };
     };
 }
