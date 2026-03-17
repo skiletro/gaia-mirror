@@ -53,7 +53,10 @@ bundleLib.mkEnableModule [ "gaia" "system" "emulation" ] {
           "aarch64-linux"
           "x86_64-linux"
         ];
-        config.virtualisation.cores = 6;
+        config = {
+          virtualisation.cores = 6;
+          boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+        };
       };
     };
 
