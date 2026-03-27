@@ -32,7 +32,6 @@ bundleLib.mkEnableModule [ "gaia" "services" "dms" ] {
         managePluginSettings = true;
         plugins = {
           dankKDEConnect.enable = true;
-          powerUsagePlugin.enable = true;
         };
         settings = {
           fontFamily = config.stylix.fonts.sansSerif.name;
@@ -206,7 +205,7 @@ bundleLib.mkEnableModule [ "gaia" "services" "dms" ] {
                 visible = true;
                 popupGapsAuto = true;
                 popupGapsManual = 4;
-                maximizeDetection = true;
+                maximizeDetection = false;
                 widgetOutlineEnabled = false;
                 widgetOutlineThickness = 2;
                 widgetOutlineColor = "surfaceText";
