@@ -32,5 +32,6 @@ rustPlatform.buildRustPackage (_finalAttrs: {
   meta = {
     homepage = "https://github.com/WhySoBad/hyprland-preview-share-picker";
     license = lib.licenses.mit;
+    mainProgram = "hyprland-preview-share-picker";
   };
 })

@@ -72,7 +72,7 @@ in
     };
 
   home-manager =
-    { pkgs, ... }:
+    { pkgs, config, ... }:
     {
       stylix.icons = {
         enable = lib.mkIf pkgs.stdenvNoCC.hostPlatform.isLinux true;
@@ -82,6 +82,8 @@ in
       };
 
       stylix.fonts.sizes.terminal = lib.mkIf pkgs.stdenvNoCC.isDarwin (lib.mkForce 16); # macos scaling is weird.
+
+      gtk.gtk4.theme = config.gtk.theme;
     };
 
   darwin =

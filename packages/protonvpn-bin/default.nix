@@ -5,7 +5,7 @@
   ...
 }:
 let
-  linuxDerivation = pkgs.protonvpn-gui;
+  linuxDerivation = pkgs.proton-vpn;
 
   darwinDerivation = pkgs.stdenvNoCC.mkDerivation {
     inherit (sources.protonvpn-bin) pname version src;
