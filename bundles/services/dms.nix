@@ -171,8 +171,9 @@ bundleLib.mkEnableModule [ "gaia" "services" "dms" ] {
                 ];
                 centerWidgets = [
                   (w "clock")
-                  spacer
-                  (w "weather")
+                  # TODO: figure out a way to add secrets pertaining to weather
+                  # spacer
+                  # (w "weather")
                 ];
                 rightWidgets = [
                   (w "music")
