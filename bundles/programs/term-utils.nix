@@ -17,7 +17,6 @@ bundleLib.mkEnableModule [ "gaia" "programs" "term-utils" ] {
         jq # json processor
         just # make file but better
         libnotify # notifs through scripts
-        ngrok # reverse proxy
         nixfmt # nix formatter
         ouch # cli for compressing and decompressing formats
         outfieldr # `tldr` client
