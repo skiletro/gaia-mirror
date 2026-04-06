@@ -25,57 +25,66 @@ bundleLib.mkEnableModule [ "gaia" "programs" "steam" ] {
         extest.enable = true;
         protontricks.enable = true;
         gamescopeSession.enable = true;
-        apps = {
-          counter-strike-2 = {
-            id = 730;
-            launchOptions = {
-              env = {
-                PULSE_LATENCY_MSEC = 60;
-                SDL_AUDIO_DRIVER = "pulse";
-                TZ = null;
-                MANGOHUD_CONFIG = "fps_limit=174,no_display";
+        apps =
+          let
+            fpsCap = toString 174;
+          in
+          {
+            counter-strike-2 = {
+              id = 730;
+              launchOptions = {
+                env = {
+                  PULSE_LATENCY_MSEC = 60;
+                  SDL_AUDIO_DRIVER = "pulse";
+                  TZ = null;
+                  MANGOHUD_CONFIG = "fps_limit=${fpsCap},no_display";
+                };
+                wrappers = [
+                  (lib.getExe' pkgs.mangohud "mangohud")
+                  "gamemoderun"
+                ];
+                args = [
+                  "+exec autoexec"
+                ];
               };
-              wrappers = [
-                (lib.getExe' pkgs.mangohud "mangohud")
-                "gamemoderun"
-              ];
-              args = [
-                "+exec autoexec"
-              ];
+            };
+            cyberpunk-2077 = {
+              id = 1091500;
+              compatTool = defaultCompatTool;
+              launchOptions = {
+                env = {
+                  PROTON_FSR4_UPGRADE = 1;
+                  MANGOHUD_CONFIG = "fps_limit=${fpsCap},fps_only";
+                  WINEDLLOVERRIDES = "winmm=n, b";
+                  PROTON_ENABLE_HDR = 1;
+                  DXVK_HDR = 1;
+                };
+                wrappers = [
+                  (lib.getExe' pkgs.mangohud "mangohud")
+                  "gamemoderun"
+                ];
+                args = [
+                  "-skipStartScreen"
+                  "--intro-skip"
+                  "--launcher-skip"
+                ];
+              };
+            };
+            monster-hunter-wilds = {
+              id = 2246340;
+              compatTool = defaultCompatTool;
+              launchOptions = {
+                env = {
+                  LD_PRELOAD = "";
+                  ENABLE_VKBASALT = 1;
+                  WINEDLLOVERRIDES = "dinput8=n,b"; # REFramework
+                  PROTON_ENABLE_HDR = 1;
+                  DXVK_HDR = 1;
+                };
+                wrappers = [ "gamemoderun" ];
+              };
             };
           };
-          cyberpunk-2077 = {
-            id = 1091500;
-            compatTool = defaultCompatTool;
-            launchOptions = {
-              env = {
-                PROTON_FSR4_UPGRADE = 1;
-                MANGOHUD_CONFIG = "fps_limit=174,fps_only";
-              };
-              wrappers = [
-                (lib.getExe' pkgs.mangohud "mangohud")
-                "gamemoderun"
-              ];
-              args = [
-                "-skipStartScreen"
-                "--intro-skip"
-                "--launcher-skip"
-              ];
-            };
-          };
-          monster-hunter-wilds = {
-            id = 2246340;
-            compatTool = defaultCompatTool;
-            launchOptions = {
-              env = {
-                LD_PRELOAD = "";
-                ENABLE_VKBASALT = 1;
-                WINEDLLOVERRIDES = "dinput8=n,b"; # REFramework
-              };
-              wrappers = [ "gamemoderun" ];
-            };
-          };
-        };
       };
     };
 
