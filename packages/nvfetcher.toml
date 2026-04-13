@@ -29,10 +29,6 @@ src.git = "https://github.com/WhySoBad/hyprland-preview-share-picker.git"
 fetch.git = "https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized.git"
 src.git = "https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized.git"
 
-[morewaita-icon-theme]
-fetch.git = "https://github.com/somepaulo/MoreWaita.git"
-src.github = "somepaulo/MoreWaita"
-
 [owo-sh]
 fetch.git = "https://owo.codes/whats-this/owo.sh.git"
 src.git = "https://owo.codes/whats-this/owo.sh.git"
@@ -59,10 +55,10 @@ fetch.url = "https://vpn.protondownload.com/download/macos/$ver/ProtonVPN_mac_v$
 src.webpage = "https://protonvpn.com/download/macos/updates/v4/sparkle.xml"
 src.regex = '<title>Version\s+((?!beta)\d+\.\d+\.\d+)</title>'
 
-[swipeaerospace-bin]
-fetch.url = "https://github.com/MediosZ/SwipeAeroSpace/releases/download/$ver/SwipeAeroSpace.zip"
-src.github = "MediosZ/SwipeAeroSpace"
-
 [spotiflac-cli]
 fetch.github = "Nizarberyan/SpotiFLAC"
 src.git = "https://github.com/Nizarberyan/SpotiFLAC.git"
+
+[swipeaerospace-bin]
+fetch.url = "https://github.com/MediosZ/SwipeAeroSpace/releases/download/$ver/SwipeAeroSpace.zip"
+src.github = "MediosZ/SwipeAeroSpace"

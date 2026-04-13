@@ -3,7 +3,6 @@
   fetchgit,
   fetchurl,
   fetchFromGitHub,
-  dockerTools,
   ...
 }:
 {
@@ -17,17 +16,17 @@
   };
   base16-schemes = {
     pname = "base16-schemes";
-    version = "13b5b0c299982bb361039601e2d72587d6846294";
+    version = "3fa37f7b72d332b406fdc254008ed6d6b50efb4c";
     src = fetchgit {
       url = "https://github.com/tinted-theming/schemes.git";
-      rev = "13b5b0c299982bb361039601e2d72587d6846294";
+      rev = "3fa37f7b72d332b406fdc254008ed6d6b50efb4c";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-4eu3LqB9tPqe0Vaqxd4wkZiBbthLbpb7llcoE/p5HT0=";
+      sha256 = "sha256-KIeHXjhlEh1wsyT6rITze7Hvc1L6fhgk30nPpcmrSrc=";
     };
-    date = "2026-03-04";
+    date = "2026-04-13";
   };
   equibop-bin = {
     pname = "equibop-bin";
@@ -39,10 +38,10 @@
   };
   helium-appimage = {
     pname = "helium-appimage";
-    version = "0.10.9.1";
+    version = "0.11.1.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-linux/releases/download/0.10.9.1/helium-0.10.9.1-x86_64.AppImage";
-      sha256 = "sha256-FMO4gB2zOjhgmjfE/T0XdDb0NMDKsQFuzy/Org1iD48=";
+      url = "https://github.com/imputnet/helium-linux/releases/download/0.11.1.1/helium-0.11.1.1-x86_64.AppImage";
+      sha256 = "sha256-Nfi8qjj7YOujsf8nLm3Mu+oh/R642Wy/nnc0ToolpW0=";
     };
   };
   helium-dmg = {
@@ -66,7 +65,7 @@
     cargoLock."Cargo.lock" = {
       lockFile = ./. + "/sha256-dreIL3+GfrTxzN5ZoQvLvEc8qFlTs_qwQZjPFJS1eJQ=/Cargo.lock";
       outputHashes = {
-        
+
       };
     };
     date = "2026-03-04";
@@ -84,19 +83,6 @@
       sha256 = "sha256-AYjKrVLISsJWXN6Cj74wXmbJtREkFDYOCRw1t2nVH2w=";
     };
     date = "2023-07-01";
-  };
-  morewaita-icon-theme = {
-    pname = "morewaita-icon-theme";
-    version = "v49";
-    src = fetchgit {
-      url = "https://github.com/somepaulo/MoreWaita.git";
-      rev = "v49";
-      fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-DxZ7XnIIF3EKGMPXahD+aHp6lCLRmrnywn7+qWCVflo=";
-    };
   };
   owo-sh = {
     pname = "owo-sh";
@@ -122,26 +108,26 @@
   };
   proton-cachyos_x86_64_v3 = {
     pname = "proton-cachyos_x86_64_v3";
-    version = "cachyos-10.0-20260321-slr";
+    version = "cachyos-10.0-20260407-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260321-slr/proton-cachyos-10.0-20260321-slr-x86_64_v3.tar.xz";
-      sha256 = "sha256-WBIaIj9P1yUYySFfbDOxZGx/CPxDCz6okoqRvYu5Epg=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260407-slr/proton-cachyos-10.0-20260407-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-j6hTz8lQPEODc5237kDmoK2tDZTH4uzv2OaNbkK8YJU=";
     };
   };
   proton-cachyos_x86_64_v4 = {
     pname = "proton-cachyos_x86_64_v4";
-    version = "cachyos-10.0-20260321-slr";
+    version = "cachyos-10.0-20260407-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260321-slr/proton-cachyos-10.0-20260321-slr-x86_64_v4.tar.xz";
-      sha256 = "sha256-eAOS+mWQa/4guK2H0yGBno3HFZ4g/gv/hxZiXq/VMHc=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260407-slr/proton-cachyos-10.0-20260407-slr-x86_64_v4.tar.xz";
+      sha256 = "sha256-cexP3jpfhn7rAvzdSOOmsmfvQvuqqEgRFwJl52QI5GY=";
     };
   };
   protonpass-bin = {
     pname = "protonpass-bin";
-    version = "1.35.0";
+    version = "1.36.0";
     src = fetchurl {
-      url = "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_1.35.0.dmg";
-      sha256 = "sha256-zwV1jBbtplM7TdS1KkEi813Z2ex45z3BP2ZA72s6pxE=";
+      url = "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_1.36.0.dmg";
+      sha256 = "sha256-PVj629W6n7weKkAJW8xqOAzAlc9jJbsvGL23Yuzc+AQ=";
     };
   };
   protonvpn-bin = {
@@ -166,10 +152,10 @@
   };
   swipeaerospace-bin = {
     pname = "swipeaerospace-bin";
-    version = "0.2.5";
+    version = "0.3.0";
     src = fetchurl {
-      url = "https://github.com/MediosZ/SwipeAeroSpace/releases/download/0.2.5/SwipeAeroSpace.zip";
-      sha256 = "sha256-v3zjXCxCS2Vsjqoc+vYvbN3hiBKy2Jh+uIrG2ZSPmn0=";
+      url = "https://github.com/MediosZ/SwipeAeroSpace/releases/download/0.3.0/SwipeAeroSpace.zip";
+      sha256 = "sha256-koHHD9ofObiwNFtCV5bkNhHH29vGzTcvCMUTDOjzWKc=";
     };
   };
 }
