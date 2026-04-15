@@ -1,4 +1,4 @@
-{ bundleLib, lib, ... }:
+{ bundleLib, ... }:
 bundleLib.mkEnableModule [ "gaia" "programs" "vial" ] {
 
   nixos =
@@ -14,6 +14,6 @@ bundleLib.mkEnableModule [ "gaia" "programs" "vial" ] {
 
     };
 
-  darwin.brew.casks = lib.singleton "vial"; # TODO: package for nixpkgs
+  darwin.homebrew.casks = [ "vial" ];
 
 }

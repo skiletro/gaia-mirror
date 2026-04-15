@@ -1,4 +1,4 @@
-{ bundleLib, lib, ... }:
+{ bundleLib, ... }:
 bundleLib.mkEnableModule [ "gaia" "programs" "rustdesk" ] {
 
   nixos =
@@ -7,8 +7,6 @@ bundleLib.mkEnableModule [ "gaia" "programs" "rustdesk" ] {
       environment.systemPackages = [ pkgs.rustdesk-flutter ];
     };
 
-  darwin = {
-    homebrew.casks = lib.singleton "rustdesk";
-  };
+  darwin.homebrew.casks = [ "rustdesk" ];
 
 }
