@@ -26,6 +26,7 @@ in
             "gamemode"
             "docker"
             "kvm"
+            "navidrome"
           ];
           openssh.authorizedKeys.keys = sshKeys;
         };

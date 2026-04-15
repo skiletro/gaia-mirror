@@ -16,6 +16,10 @@
         };
       };
 
+      systemd.tmpfiles.rules = [
+        "d /mnt/music 0770 navidrome navidrome -"
+      ];
+
       services.caddy.virtualHosts."${subdomain}.${domain}".extraConfig = ''
         reverse_proxy :${toString port}
       '';
