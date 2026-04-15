@@ -5,7 +5,6 @@ bundleLib.mkEnableModule [ "gaia" "programs" "kitty" ] {
     programs.kitty = {
       enable = true;
       settings = {
-        hide_window_decorations = "titlebar-only";
         enable_audio_bell = false;
         wayland_title_bar = "background";
         dynamic_background_opacity = true;
