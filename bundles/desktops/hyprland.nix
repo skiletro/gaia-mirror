@@ -202,6 +202,8 @@ lib.mkIf (config.gaia.desktop == "hyprland") {
               "match:class ^(gsr-ui)$, float on"
               "match:class ^(gsr-ui)$, pin on"
               "match:class ^(gsr-ui)$, move 0 0"
+
+              "match:class helium, suppress_event maximize"
             ]
             ++ [
               "match:tag floater, float on"
