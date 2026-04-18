@@ -32,6 +32,7 @@ bundleLib.mkEnableModule [ "gaia" "services" "dms" ] {
         managePluginSettings = true;
         plugins = {
           dankKDEConnect.enable = true;
+          volumeMixer.enable = true;
         };
         settings = {
           fontFamily = config.stylix.fonts.sansSerif.name;
@@ -56,7 +57,8 @@ bundleLib.mkEnableModule [ "gaia" "services" "dms" ] {
           showLauncherButton = true;
           showWorkspaceSwitcher = true;
           showFocusedWindow = true;
-          showWeather = true;
+          showWeather = false;
+          weatherEnabled = false;
           showMusic = true;
           showClipboard = true;
           showCpuUsage = true;
@@ -182,7 +184,14 @@ bundleLib.mkEnableModule [ "gaia" "services" "dms" ] {
                   (w "systemTray")
                   spacer
                   (w "notificationButton")
-                  (w "controlCenterButton")
+                  (w "volumeMixer")
+                  (
+                    (w "controlCenterButton")
+                    // {
+                      showAudioIcon = false;
+                      showAudioPercent = false;
+                    }
+                  )
                   spacer
                 ];
                 spacing = 5;
@@ -229,13 +238,11 @@ bundleLib.mkEnableModule [ "gaia" "services" "dms" ] {
             in
             [
               (w "volumeSlider")
-              (w "brightnessSlider")
-              (w "bluetooth")
+              (w "inputVolumeSlider")
               (w "audioOutput")
               (w "audioInput")
-              (w "builtin_vpn")
+              (w "bluetooth")
               (du "mktvkfz3tysbvmtwsns9t6c9d1ya5" "/")
-              (w "builtin_cups")
             ];
         };
       };
