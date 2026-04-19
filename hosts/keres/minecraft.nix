@@ -56,6 +56,11 @@
                     url = "https://cdn.modrinth.com/data/bWrNNfkb/versions/wzwExuYr/Floodgate-Fabric-2.2.6-b54.jar";
                     sha256 = "1j776sv7gc8ms5wn5z3y4imm4zsw3dipr2iwll0pcnj9mwrxwmr9";
                   };
+                  scalablelux = pkgs.fetchurl {
+                    name = "scalablelux.jar";
+                    url = "https://cdn.modrinth.com/data/Ps1zyz6x/versions/PV9KcrYQ/ScalableLux-0.1.6%2Bfabric.c25518a-all.jar";
+                    sha256 = "1hjgbnq3b8zqy2jgh2pl4cnaqx8x4mdbamiva9awg0v171qp6jks";
+                  };
                 }
               );
             };
@@ -64,6 +69,8 @@
 
         };
       };
+
+      environment.systemPackages = [ pkgs.tmux ];
 
     };
 }
