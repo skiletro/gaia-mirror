@@ -16,7 +16,7 @@
     },
     "base16-schemes": {
         "cargoLock": null,
-        "date": "2026-04-13",
+        "date": "2026-04-21",
         "extract": null,
         "name": "base16-schemes",
         "passthru": null,
@@ -26,13 +26,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "3fa37f7b72d332b406fdc254008ed6d6b50efb4c",
-            "sha256": "sha256-KIeHXjhlEh1wsyT6rITze7Hvc1L6fhgk30nPpcmrSrc=",
+            "rev": "d5ddce0697a91203fd3eccc40140890a69fc279e",
+            "sha256": "sha256-FwuOyAWXsdG7/1TpndL0gYPzBh5XOi1gNliZB774VaA=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/tinted-theming/schemes.git"
         },
-        "version": "3fa37f7b72d332b406fdc254008ed6d6b50efb4c"
+        "version": "d5ddce0697a91203fd3eccc40140890a69fc279e"
     },
     "equibop-bin": {
         "cargoLock": null,
@@ -43,11 +43,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-S0DY0UzesPo+xggX1s3ERHByW2L+c/znlC+X1LIUV94=",
+            "sha256": "sha256-NqLmoO4mhk9hPrELIc3lLwgxLNj2wvr0Y1GLk4VSf3g=",
             "type": "url",
-            "url": "https://github.com/Equicord/Equibop/releases/download/v3.1.9/Equibop-3.1.9-universal.dmg"
+            "url": "https://github.com/Equicord/Equibop/releases/download/v3.2.0/Equibop-3.2.0-universal.dmg"
         },
-        "version": "3.1.9"
+        "version": "3.2.0"
     },
     "helium-appimage": {
         "cargoLock": null,
@@ -58,11 +58,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-Nfi8qjj7YOujsf8nLm3Mu+oh/R642Wy/nnc0ToolpW0=",
+            "sha256": "sha256-5gdyKg12ZV2hpf0RL+eoJnawuW/J8NobiG+zEA0IOHA=",
             "type": "url",
-            "url": "https://github.com/imputnet/helium-linux/releases/download/0.11.1.1/helium-0.11.1.1-x86_64.AppImage"
+            "url": "https://github.com/imputnet/helium-linux/releases/download/0.11.3.2/helium-0.11.3.2-x86_64.AppImage"
         },
-        "version": "0.11.1.1"
+        "version": "0.11.3.2"
     },
     "helium-dmg": {
         "cargoLock": null,
@@ -73,11 +73,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-qLsd9TNAri8ytp2LyRiRQmCxrvC60r/JYQZCpdEP8es=",
+            "sha256": "sha256-nOk6FC0g6N1WXLzTxW6mFMu2OO/9TKRqj+nqeOiWi+o=",
             "type": "url",
-            "url": "https://github.com/imputnet/helium-macos/releases/download/0.10.9.1/helium_0.10.9.1_arm64-macos.dmg"
+            "url": "https://github.com/imputnet/helium-macos/releases/download/0.11.3.2/helium_0.11.3.2_arm64-macos.dmg"
         },
-        "version": "0.10.9.1"
+        "version": "0.11.3.2"
     },
     "hyprland-preview-share-picker": {
         "cargoLock": {
@@ -169,11 +169,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-j6hTz8lQPEODc5237kDmoK2tDZTH4uzv2OaNbkK8YJU=",
+            "sha256": "sha256-rTpavOdfN+DYYfi05uQyTkp/+bA0mhVdlY0BRIte6As=",
             "type": "url",
-            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260407-slr/proton-cachyos-10.0-20260407-slr-x86_64_v3.tar.xz"
+            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260420-slr/proton-cachyos-10.0-20260420-slr-x86_64_v3.tar.xz"
         },
-        "version": "cachyos-10.0-20260407-slr"
+        "version": "cachyos-10.0-20260420-slr"
     },
     "proton-cachyos_x86_64_v4": {
         "cargoLock": null,
@@ -184,11 +184,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-cexP3jpfhn7rAvzdSOOmsmfvQvuqqEgRFwJl52QI5GY=",
+            "sha256": "sha256-CTYxrKhEH4zLft2kSpPq+vb3iWakp9SdaWu5obNPHjg=",
             "type": "url",
-            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260407-slr/proton-cachyos-10.0-20260407-slr-x86_64_v4.tar.xz"
+            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260420-slr/proton-cachyos-10.0-20260420-slr-x86_64_v4.tar.xz"
         },
-        "version": "cachyos-10.0-20260407-slr"
+        "version": "cachyos-10.0-20260420-slr"
     },
     "protonpass-bin": {
         "cargoLock": null,
@@ -199,11 +199,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-PVj629W6n7weKkAJW8xqOAzAlc9jJbsvGL23Yuzc+AQ=",
+            "sha256": "sha256-JKm5DhIZLj2XXuxWKo48VY4onRypouIJUVV9IK/wJGE=",
             "type": "url",
-            "url": "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_1.36.0.dmg"
+            "url": "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_1.36.1.dmg"
         },
-        "version": "1.36.0"
+        "version": "1.36.1"
     },
     "protonvpn-bin": {
         "cargoLock": null,
