@@ -139,11 +139,18 @@ bundleLib.mkEnableModule [ "gaia" "services" "dms" ] {
           dockSmartAutoHide = true;
           dockGroupByApp = true;
           dockOpenOnOverview = false;
-          dockPosition = 3; # right hand side
+          dockPosition = 1; # right hand side
           dockSpacing = 15; # %
           dockMargin = 10;
           dockIconSize = 45;
           dockIndicatorStyle = "line"; # one of "line", "circle"
+
+          # Frame
+          frameEnabled = true;
+          frameThickness = 2;
+          frameRounding = 12;
+          frameColor = "#000000";
+          frameBarSize = 32;
 
           # Bar settings
           barConfigs =
