@@ -6,8 +6,16 @@
   ...
 }:
 let
+  # https://tinted-theming.github.io/tinted-gallery/#base16-evenok-dark
   sharedStylixConfig = config: pkgs: {
-    base16Scheme = "${self'.packages.base16-schemes}/share/themes/soft-server.yaml";
+    base16Scheme = "${self'.packages.base16-schemes}/share/themes/evenok-dark.yaml";
+    override = {
+      scheme = "Evenok OLED";
+      base00 = "000000";
+      base01 = "080808";
+      base0D = "9095ff";
+      base0E = "00aff2";
+    };
     polarity = "dark";
     fonts = {
       sansSerif = {
@@ -34,8 +42,8 @@ let
     image =
       let
         wallpaper = pkgs.fetchurl {
-          url = "https://w.wallhaven.cc/full/28/wallhaven-28k9zx.png";
-          sha256 = "1v473jbwdqhay8wf6fvmhl5invfj2wfn22xakvzc4bxh3n471267";
+          url = "https://w.wallhaven.cc/full/3k/wallhaven-3k5zgy.jpg";
+          sha256 = "0g995gd4zpyhz5fxlh6grid4r02yaz46s1cnn21frzs2pc3pr9mp";
         };
       in
       pkgs.runCommand "output.png" { }
@@ -63,9 +71,9 @@ in
         };
 
         opacity = {
-          applications = 0.75;
-          popups = 0.75;
-          terminal = 0.75;
+          applications = 0.85;
+          popups = 0.85;
+          terminal = 0.85;
         };
       }
       // (sharedStylixConfig config pkgs);
