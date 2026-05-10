@@ -15,11 +15,10 @@ bundleLib.mkEnableModule [ "gaia" "programs" "steam" ] {
 
       programs.steam = rec {
         enable = true;
-        extraCompatPackages = with pkgs; [
+        extraCompatPackages = [
           self'.packages.proton-cachyos_x86_64_v3
-          self'.packages.proton-cachyos_x86_64_v4
           inputs'.nixpkgs-xr.packages.proton-ge-rtsp-bin
-          steam-play-none # Allows you to run a game without Proton if it is otherwise forced.
+          pkgs.steam-play-none # Allows you to run a game without Proton if it is otherwise forced.
         ];
         defaultCompatTool = "Proton-CachyOS x86-64-v4";
         extest.enable = true;

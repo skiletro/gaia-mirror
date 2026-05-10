@@ -41,10 +41,6 @@ src.github = "alienator88/Pearcleaner"
 fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64_v3.tar.xz"
 src.github = "CachyOS/proton-cachyos"
 
-[proton-cachyos_x86_64_v4]
-fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64_v4.tar.xz"
-src.github = "CachyOS/proton-cachyos"
-
 [protonpass-bin]
 fetch.url = "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_$ver.dmg"
 src.webpage = "https://proton.me/download/PassDesktop/darwin/universal/version.json"
