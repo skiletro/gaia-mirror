@@ -18,15 +18,8 @@ in
           initialHashedPassword = "$y$j9T$n8xcu2.p61Y1bFPhGzNgg1$3sSlfbyZfRzOuJxGd20h0MI6G131ZO0KoFEmLjBzT04";
           hashedPasswordFile = config.sops.secrets.jamie-password.path;
           extraGroups = [
-            # TODO: probably get rid of some of these
-            "users"
-            "networkmanager"
-            "wheel"
-            "libvirtd"
-            "gamemode"
-            "docker"
-            "kvm"
-            "navidrome"
+            "users" # default user group for users
+            "wheel" # sudo
           ];
           openssh.authorizedKeys.keys = sshKeys;
         };

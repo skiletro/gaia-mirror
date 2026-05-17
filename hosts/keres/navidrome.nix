@@ -32,5 +32,7 @@
         self'.packages.spotiflac-cli
         pkgs.beets
       ];
+
+      users.users.jamie.extraGroups = [ "navidrome" ];
     };
 }

@@ -32,6 +32,12 @@ bundleLib.mkEnableModule [ "gaia" "system" "virtualisation" ] {
 
         variables.DOCKER_HOST = "unix:///var/run/podman/podman.sock"; # use podman for act instead of docker
       };
+
+      users.users.jamie.extraGroups = [
+        "docker" # allows non-root to access docker
+        "kvm" # provides access to /dev/kvm
+        "libvirtd" # allows non-root to manage vms with libvirt
+      ];
     };
 
   darwin =
