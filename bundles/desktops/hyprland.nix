@@ -34,6 +34,7 @@ lib.mkIf (config.gaia.desktop == "hyprland") {
       wayland.windowManager.hyprland = {
         enable = true;
         package = null;
+        configType = "hyprlang"; # TODO: convert config to lua :(
         portalPackage = null;
         systemd.enable = false;
         settings =
