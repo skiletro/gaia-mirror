@@ -11,7 +11,12 @@ bundleLib.mkEnableModule [ "gaia" "programs" "vicinae" ] {
       enable = true;
       systemd.enable = true;
       extensions = with inputs'.vicinae-extensions.packages; [
+        # keep-sorted start
+        bluetooth
         nix
+        process-manager
+        protondb-search
+        # keep-sorted end
       ];
       settings = {
         close_on_focus_loss = false;
@@ -55,6 +60,8 @@ bundleLib.mkEnableModule [ "gaia" "programs" "vicinae" ] {
               "steamtinkerlaunch"
               "uuctl"
               "vicinae"
+              "vim"
+              "wayvr"
               "yazi"
               # keep-sorted end
             ] (n: lib.nameValuePair n { enabled = false; });

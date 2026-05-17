@@ -84,10 +84,10 @@ lib.mkIf (config.gaia.desktop == "hyprland") {
               "SUPER SHIFT, F, fullscreen"
               "SUPER SHIFT, Space, togglefloating"
 
-              "SUPER, P, exec, ${lib.getExe pkgs.kitty} --class='btop' btop -p 1"
+              "SUPER, P, exec, vicinae deeplink vicinae://launch/@leonkohli/vicinae-extension-process-manager-0/processes"
               "SUPER, N, exec, ${dms "notifications toggle"}"
               "SUPER SHIFT, P, exec, ${dms "powermenu toggle"}"
-              "SUPER, Period, exec, vicinae vicinae://extensions/vicinae/core/search-emojis"
+              "SUPER, Period, exec, vicinae deeplink vicinae://launch/core/search-emojis"
               "SUPER, L, exec, ${dms "lock lock"}"
               "SUPER SHIFT, L, exec, ${lib.getExe pkgs.hyprpicker} | ${lib.getExe' pkgs.wl-clipboard "wl-copy"}"
 
@@ -227,7 +227,6 @@ lib.mkIf (config.gaia.desktop == "hyprland") {
               "class org.gnome.NautilusPreviewer"
               "initial_title ^(Signal Sticker Pack Creator)$"
               "class com.danklinux.dms"
-              "class btop"
             ]);
           };
       };
