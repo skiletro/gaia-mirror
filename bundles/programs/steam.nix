@@ -20,7 +20,7 @@ bundleLib.mkEnableModule [ "gaia" "programs" "steam" ] {
           inputs'.nixpkgs-xr.packages.proton-ge-rtsp-bin
           pkgs.steam-play-none # Allows you to run a game without Proton if it is otherwise forced.
         ];
-        defaultCompatTool = "Proton-CachyOS x86-64-v4";
+        defaultCompatTool = "Proton-CachyOS x86-64-v3";
         extest.enable = true;
         protontricks.enable = true;
         gamescopeSession.enable = true;
