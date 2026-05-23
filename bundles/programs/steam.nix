@@ -83,6 +83,14 @@ bundleLib.mkEnableModule [ "gaia" "programs" "steam" ] {
                 wrappers = [ "gamemoderun" ];
               };
             };
+            vrchat = {
+              id = 438100;
+              compatTool = "GE-Proton-rtsp";
+              launchOptions = {
+                env."PRESSURE_VESSEL_IMPORT_OPENXR_1_RUNTIMES" = 1;
+                wrappers = [ "gamemoderun" ];
+              };
+            };
           };
       };
     };
