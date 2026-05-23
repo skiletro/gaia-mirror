@@ -38,18 +38,18 @@
   };
   helium-appimage = {
     pname = "helium-appimage";
-    version = "0.12.3.1";
+    version = "0.12.4.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-linux/releases/download/0.12.3.1/helium-0.12.3.1-x86_64.AppImage";
-      sha256 = "sha256-VnOhzhAulvFNBB/0AD1d+K/TzfFL9Zwtk/vcm5vWl+I=";
+      url = "https://github.com/imputnet/helium-linux/releases/download/0.12.4.1/helium-0.12.4.1-x86_64.AppImage";
+      sha256 = "sha256-OgS8HkLBseFrEhNFJxMwp1bg0gzPdfY1VaySAAp7vq0=";
     };
   };
   helium-dmg = {
     pname = "helium-dmg";
-    version = "0.12.3.1";
+    version = "0.12.4.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-macos/releases/download/0.12.3.1/helium_0.12.3.1_arm64-macos.dmg";
-      sha256 = "sha256-BrbexBlCQh9htQEy4Wiul/oNSn2MVERoqpLT8VRLENM=";
+      url = "https://github.com/imputnet/helium-macos/releases/download/0.12.4.1/helium_0.12.4.1_arm64-macos.dmg";
+      sha256 = "sha256-0cpES40UjQqUmdmZqEx37SUKJ1F2L4X+91t8+IQ6y5g=";
     };
   };
   hyprland-preview-share-picker = {
@@ -116,10 +116,10 @@
   };
   protonpass-bin = {
     pname = "protonpass-bin";
-    version = "1.36.1";
+    version = "1.37.0";
     src = fetchurl {
-      url = "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_1.36.1.dmg";
-      sha256 = "sha256-JKm5DhIZLj2XXuxWKo48VY4onRypouIJUVV9IK/wJGE=";
+      url = "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_1.37.0.dmg";
+      sha256 = "sha256-EhSj3d5HsvSIpbEKKfln5niOI1B97yNxD1dg1wlZsxw=";
     };
   };
   protonvpn-bin = {

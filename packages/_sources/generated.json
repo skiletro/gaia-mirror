@@ -58,11 +58,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-VnOhzhAulvFNBB/0AD1d+K/TzfFL9Zwtk/vcm5vWl+I=",
+            "sha256": "sha256-OgS8HkLBseFrEhNFJxMwp1bg0gzPdfY1VaySAAp7vq0=",
             "type": "url",
-            "url": "https://github.com/imputnet/helium-linux/releases/download/0.12.3.1/helium-0.12.3.1-x86_64.AppImage"
+            "url": "https://github.com/imputnet/helium-linux/releases/download/0.12.4.1/helium-0.12.4.1-x86_64.AppImage"
         },
-        "version": "0.12.3.1"
+        "version": "0.12.4.1"
     },
     "helium-dmg": {
         "cargoLock": null,
@@ -73,11 +73,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-BrbexBlCQh9htQEy4Wiul/oNSn2MVERoqpLT8VRLENM=",
+            "sha256": "sha256-0cpES40UjQqUmdmZqEx37SUKJ1F2L4X+91t8+IQ6y5g=",
             "type": "url",
-            "url": "https://github.com/imputnet/helium-macos/releases/download/0.12.3.1/helium_0.12.3.1_arm64-macos.dmg"
+            "url": "https://github.com/imputnet/helium-macos/releases/download/0.12.4.1/helium_0.12.4.1_arm64-macos.dmg"
         },
-        "version": "0.12.3.1"
+        "version": "0.12.4.1"
     },
     "hyprland-preview-share-picker": {
         "cargoLock": {
@@ -184,11 +184,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-JKm5DhIZLj2XXuxWKo48VY4onRypouIJUVV9IK/wJGE=",
+            "sha256": "sha256-EhSj3d5HsvSIpbEKKfln5niOI1B97yNxD1dg1wlZsxw=",
             "type": "url",
-            "url": "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_1.36.1.dmg"
+            "url": "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_1.37.0.dmg"
         },
-        "version": "1.36.1"
+        "version": "1.37.0"
     },
     "protonvpn-bin": {
         "cargoLock": null,
