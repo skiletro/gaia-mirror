@@ -21,7 +21,7 @@
         ];
         boot.kernel.sysctl."vm.max_map_count" = 2147483642; # Some Steam games like this, idk why
 
-        programs.steam.package = pkgs.millennium-steam.override {
+        programs.steam.package = pkgs.steam.override {
           extraProfile = ''
             export DXVK_HUD=compiler
             export PROTON_ENABLE_WAYLAND=1
@@ -31,8 +31,6 @@
             unset TZ
           '';
         };
-
-        nixpkgs.overlays = [ inputs.millennium.overlays.default ];
       };
     };
 
