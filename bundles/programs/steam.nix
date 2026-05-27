@@ -27,8 +27,12 @@ bundleLib.mkEnableModule [ "gaia" "programs" "steam" ] {
         apps =
           let
             fpsCap = toString 174;
+
+            gamemode = "gamemoderun";
+            mangohud = lib.getExe' pkgs.mangohud "mangohud";
           in
           {
+            # keep-sorted start block=yes
             counter-strike-2 = {
               id = 730;
               launchOptions = {
@@ -39,8 +43,8 @@ bundleLib.mkEnableModule [ "gaia" "programs" "steam" ] {
                   MANGOHUD_CONFIG = "fps_limit=${fpsCap},no_display";
                 };
                 wrappers = [
-                  (lib.getExe' pkgs.mangohud "mangohud")
-                  "gamemoderun"
+                  mangohud
+                  gamemode
                 ];
                 args = [
                   "+exec autoexec"
@@ -59,8 +63,8 @@ bundleLib.mkEnableModule [ "gaia" "programs" "steam" ] {
                   DXVK_HDR = 1;
                 };
                 wrappers = [
-                  (lib.getExe' pkgs.mangohud "mangohud")
-                  "gamemoderun"
+                  mangohud
+                  gamemode
                 ];
                 args = [
                   "-skipStartScreen"
@@ -80,7 +84,7 @@ bundleLib.mkEnableModule [ "gaia" "programs" "steam" ] {
                   PROTON_ENABLE_HDR = 1;
                   DXVK_HDR = 1;
                 };
-                wrappers = [ "gamemoderun" ];
+                wrappers = [ gamemode ];
               };
             };
             vrchat = {
@@ -88,9 +92,10 @@ bundleLib.mkEnableModule [ "gaia" "programs" "steam" ] {
               compatTool = "GE-Proton-rtsp";
               launchOptions = {
                 env."PRESSURE_VESSEL_IMPORT_OPENXR_1_RUNTIMES" = 1;
-                wrappers = [ "gamemoderun" ];
+                wrappers = [ gamemode ];
               };
             };
+            # keep-sorted end
           };
       };
     };
