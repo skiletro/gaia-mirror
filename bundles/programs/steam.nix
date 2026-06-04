@@ -84,7 +84,7 @@ bundleLib.mkEnableModule [ "gaia" "programs" "steam" ] {
             };
             red-dead-redemption-ii = {
               id = 1174180;
-              compatTool = defaultCompatTool;
+              compatTool = "Proton 11.0 (Beta)"; # doesn't seem cachy proton plays nicely
               launchOptions = {
                 env = {
                   PROTON_FSR4_UPGRADE = 1;
