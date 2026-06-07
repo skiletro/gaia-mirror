@@ -6,6 +6,7 @@
         # keep-sorted start
         "drasl"
         "miniflux"
+        "mollysocket"
         "wakapi"
         # keep-sorted end
       ];
