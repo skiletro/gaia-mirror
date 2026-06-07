@@ -5,8 +5,10 @@
       deployments = [
         # keep-sorted start
         "drasl"
+        "knot"
         "miniflux"
         "mollysocket"
+        "navidrome"
         "wakapi"
         # keep-sorted end
       ];
