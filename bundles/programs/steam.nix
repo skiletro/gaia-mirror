@@ -52,7 +52,7 @@ bundleLib.mkEnableModule [ "gaia" "programs" "steam" ] {
               launchOptions = {
                 env = {
                   PROTON_FSR4_UPGRADE = 1;
-                  MANGOHUD_CONFIG = "fps_limit=${fpsCap},fps_only";
+                  MANGOHUD_CONFIG = "fps_limit=${fpsCap},no_display";
                   WINEDLLOVERRIDES = "winmm=n, b";
                   PROTON_ENABLE_HDR = 1;
                   DXVK_HDR = 1;
@@ -84,13 +84,16 @@ bundleLib.mkEnableModule [ "gaia" "programs" "steam" ] {
             };
             red-dead-redemption-ii = {
               id = 1174180;
-              compatTool = "Proton 11.0 (Beta)"; # doesn't seem cachy proton plays nicely
+              compatTool = "proton_11";
               launchOptions = {
                 env = {
                   PROTON_FSR4_UPGRADE = 1;
-                  MANGOHUD_CONFIG = "fps_limit=90,fps_only";
+                  MANGOHUD_CONFIG = "fps_limit=90,no_display";
                   PROTON_ENABLE_HDR = 1;
                   DXVK_HDR = 1;
+                  PROTON_NO_ESYNC = 1;
+                  PROTON_NO_FSYNC = 1;
+                  PROTON_USE_NTSYNC = 1;
                 };
                 wrappers = [
                   mangohud
