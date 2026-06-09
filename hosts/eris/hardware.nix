@@ -27,6 +27,11 @@
     boot.extraModulePackages = [ ];
     boot.supportedFilesystems = [ "ntfs" ];
 
+    services.logind.settings.Login = {
+      HandlePowerKey = "ignore"; # handle at desktop level
+      HandlePowerKeyLongPress = "poweroff";
+    };
+
     # Drives
     fileSystems."/" = {
       device = "/dev/disk/by-uuid/94e933e3-aaf9-4cf3-b7c9-044306fce269";

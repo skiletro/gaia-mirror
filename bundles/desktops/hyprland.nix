@@ -103,6 +103,8 @@ lib.mkIf (config.gaia.desktop == "hyprland") {
 
               "SUPER, code:49, togglespecialworkspace" # code:49 = `
               "SUPER SHIFT, code:49, movetoworkspace, special"
+
+              ", XF86PowerOff, exec, ${dms "lock lock"}"
             ]
             ++ (builtins.concatLists (
               builtins.genList (i: [
