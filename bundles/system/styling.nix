@@ -6,16 +6,8 @@
   ...
 }:
 let
-  # https://tinted-theming.github.io/tinted-gallery/#base16-evenok-dark
   sharedStylixConfig = config: pkgs: {
-    base16Scheme = "${self'.packages.base16-schemes}/share/themes/evenok-dark.yaml";
-    override = {
-      scheme = "Evenok OLED";
-      base00 = "000000";
-      base01 = "080808";
-      base0D = "9095ff";
-      base0E = "00aff2";
-    };
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/chalk.yaml";
     polarity = "dark";
     fonts = {
       sansSerif = {
@@ -80,7 +72,7 @@ in
     };
 
   home-manager =
-    { pkgs, config, ... }:
+    { pkgs, ... }:
     {
       stylix.icons = {
         enable = lib.mkIf pkgs.stdenvNoCC.hostPlatform.isLinux true;
@@ -90,8 +82,6 @@ in
       };
 
       stylix.fonts.sizes.terminal = lib.mkIf pkgs.stdenvNoCC.isDarwin (lib.mkForce 16); # macos scaling is weird.
-
-      gtk.gtk4.theme = config.gtk.theme;
     };
 
   darwin =
