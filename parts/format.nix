@@ -13,6 +13,8 @@
           "*.age"
           "packages/_sources/generated.json"
           "packages/_sources/generated.nix"
+          "docs/graveyard/**"
+          "docs/graveyard/packages/*"
         ];
         programs = {
           # keep-sorted start

@@ -14,20 +14,6 @@
       sha256 = "sha256-U1oEOvBHBtJEcQWeZHRb/IDWYXraLuo0NdxWINwPUxg=";
     };
   };
-  base16-schemes = {
-    pname = "base16-schemes";
-    version = "0c94645546f4f3ddac77a1a5fce54eb95bf50795";
-    src = fetchgit {
-      url = "https://github.com/tinted-theming/schemes.git";
-      rev = "0c94645546f4f3ddac77a1a5fce54eb95bf50795";
-      fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-PDF0/wObw4nIsSBeXVYLsloXOiphXCgIdsrNcVXguKs=";
-    };
-    date = "2026-05-03";
-  };
   equibop-bin = {
     pname = "equibop-bin";
     version = "3.2.1";
@@ -51,52 +37,6 @@
       url = "https://github.com/imputnet/helium-macos/releases/download/0.13.2.1/helium_0.13.2.1_arm64-macos.dmg";
       sha256 = "sha256-0Vw5iZ4Iro0GHDOOIh5E4cJbVXaqY0edeYGvWDAdw8E=";
     };
-  };
-  hyprland-preview-share-picker = {
-    pname = "hyprland-preview-share-picker";
-    version = "344394a8669fb82ff2744d2780327dd402ffb76a";
-    src = fetchFromGitHub {
-      owner = "WhySoBad";
-      repo = "hyprland-preview-share-picker";
-      rev = "344394a8669fb82ff2744d2780327dd402ffb76a";
-      fetchSubmodules = true;
-      sha256 = "sha256-dreIL3+GfrTxzN5ZoQvLvEc8qFlTs/qwQZjPFJS1eJQ=";
-    };
-    cargoLock."Cargo.lock" = {
-      lockFile = ./. + "/sha256-dreIL3+GfrTxzN5ZoQvLvEc8qFlTs_qwQZjPFJS1eJQ=/Cargo.lock";
-      outputHashes = {
-        
-      };
-    };
-    date = "2026-03-04";
-  };
-  liga-sf-mono-nerd-font = {
-    pname = "liga-sf-mono-nerd-font";
-    version = "dc5a3e6fcc2e16ad476b7be3c3c17c2273b260ea";
-    src = fetchgit {
-      url = "https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized.git";
-      rev = "dc5a3e6fcc2e16ad476b7be3c3c17c2273b260ea";
-      fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-AYjKrVLISsJWXN6Cj74wXmbJtREkFDYOCRw1t2nVH2w=";
-    };
-    date = "2023-07-01";
-  };
-  owo-sh = {
-    pname = "owo-sh";
-    version = "e32e86d326bafbc6c983cc45cc0b2d9c00db2926";
-    src = fetchgit {
-      url = "https://owo.codes/whats-this/owo.sh.git";
-      rev = "e32e86d326bafbc6c983cc45cc0b2d9c00db2926";
-      fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-mPD2XM452ZHFQ9tHDOUW3SCexZM9z2NJdFnMzw2Xun0=";
-    };
-    date = "2026-05-26";
   };
   pearcleaner-bin = {
     pname = "pearcleaner-bin";
