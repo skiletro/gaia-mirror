@@ -34,7 +34,6 @@ bundleLib.mkEnableModule [ "gaia" "programs" "vicinae" ] {
           clipboard.enabled = false;
           developer.enabled = false;
           manage-shortcuts.enabled = false;
-          power.enabled = false;
           theme.enabled = false;
           applications = {
             preferences.launchPrefix = "uwsm app -- ";
