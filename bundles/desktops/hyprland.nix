@@ -25,7 +25,9 @@ lib.mkIf (config.gaia.desktop == "hyprland") {
       portalPackage = inputs'.hyprland.packages.xdg-desktop-portal-hyprland;
     };
 
-    security.polkit.enable = lib.mkDefault true;
+    security.polkit.enable = true;
+
+    services.displayManager.defaultSession = "hyprland-uwsm";
   };
 
   home-manager =
