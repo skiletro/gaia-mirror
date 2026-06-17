@@ -221,7 +221,21 @@ bundleLib.mkEnableModule [ "gaia" "programs" "helix" ] {
               ];
             };
           };
-          keys.normal."=" = ":format";
+          keys = {
+            normal = {
+              "up" = "no_op";
+              "down" = "no_op";
+              "left" = "no_op";
+              "right" = "no_op";
+              "=" = ":format";
+            };
+            insert = {
+              "up" = "no_op";
+              "down" = "no_op";
+              "left" = "no_op";
+              "right" = "no_op";
+            };
+          };
         };
       };
     };
