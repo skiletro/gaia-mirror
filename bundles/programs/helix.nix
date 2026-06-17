@@ -27,6 +27,7 @@ bundleLib.mkEnableModule [ "gaia" "programs" "helix" ] {
           nixd # Nix
           nufmt # Nu
           prettier # HTML/CSS/JS
+          qt6.qtdeclarative # QML
           rust-analyzer # Rust
           rustfmt # Rust
           taplo # TOML
@@ -150,6 +151,12 @@ bundleLib.mkEnableModule [ "gaia" "programs" "helix" ] {
                   language-servers = [
                     "marksman"
                     "harper"
+                  ];
+                }
+                {
+                  name = "qml";
+                  language-servers = [
+                    "qmlls"
                   ];
                 }
                 # keep-sorted end
