@@ -8,11 +8,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-U1oEOvBHBtJEcQWeZHRb/IDWYXraLuo0NdxWINwPUxg=",
+            "sha256": "sha256-uMjtl/ZCuJuko2o+CWYZ8IBdBswlrhEW5pU7mBQq4gw=",
             "type": "url",
-            "url": "https://github.com/samuelngs/apple-emoji-linux/releases/download/macos-26-20260219-2aa12422/AppleColorEmoji-Linux.ttf"
+            "url": "https://github.com/samuelngs/apple-emoji-linux/releases/download/macos-26-20260613-f1fc560b/AppleColorEmoji-Linux.ttf"
         },
-        "version": "macos-26-20260219-2aa12422"
+        "version": "macos-26-20260613-f1fc560b"
     },
     "equibop-bin": {
         "cargoLock": null,
@@ -38,11 +38,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-I9VqXE20FNjEz9FyvcCZ8ZqRZbPIU+QtGPblAdwJRk8=",
+            "sha256": "sha256-ZcZo/vFXWrZjuPjIt2MYbsxs4LU7NvpB3I6mrPzAJjE=",
             "type": "url",
-            "url": "https://github.com/imputnet/helium-linux/releases/download/0.13.2.1/helium-0.13.2.1-x86_64.AppImage"
+            "url": "https://github.com/imputnet/helium-linux/releases/download/0.13.6.1/helium-0.13.6.1-x86_64.AppImage"
         },
-        "version": "0.13.2.1"
+        "version": "0.13.6.1"
     },
     "helium-dmg": {
         "cargoLock": null,
@@ -53,11 +53,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-0Vw5iZ4Iro0GHDOOIh5E4cJbVXaqY0edeYGvWDAdw8E=",
+            "sha256": "sha256-YSYTfUJMRGtSsMiYNmIyEzdkxvvns6ZpgD1qKdL1p0Y=",
             "type": "url",
-            "url": "https://github.com/imputnet/helium-macos/releases/download/0.13.2.1/helium_0.13.2.1_arm64-macos.dmg"
+            "url": "https://github.com/imputnet/helium-macos/releases/download/0.13.6.1/helium_0.13.6.1_arm64-macos.dmg"
         },
-        "version": "0.13.2.1"
+        "version": "0.13.6.1"
     },
     "pearcleaner-bin": {
         "cargoLock": null,
@@ -83,11 +83,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-hWkZ+22va9Icx8DEj80k3lZId/jv/ETxXmB8UdwIz6U=",
+            "sha256": "sha256-HZmTHTziUU2nfmSTinG8qJntTweI5Xtk8SZ3BnHgpmI=",
             "type": "url",
-            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260521-slr/proton-cachyos-11.0-20260521-slr-x86_64_v3.tar.xz"
+            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260602-slr/proton-cachyos-11.0-20260602-slr-x86_64_v3.tar.xz"
         },
-        "version": "cachyos-11.0-20260521-slr"
+        "version": "cachyos-11.0-20260602-slr"
     },
     "protonpass-bin": {
         "cargoLock": null,

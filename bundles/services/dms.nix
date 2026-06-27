@@ -24,7 +24,7 @@ bundleLib.mkEnableModule [ "gaia" "services" "dms" ] {
     {
       imports = with inputs; [
         dms.homeModules.dank-material-shell
-        dms-plugin-registry.modules.default
+        dms-plugin-registry.homeModules.default
       ];
 
       programs.dank-material-shell = {
