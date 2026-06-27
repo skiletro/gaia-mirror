@@ -27,6 +27,11 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
 
+    helium = {
+      url = "github:oxcl/nix-flake-helium-browser";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     helix.url = "github:helix-editor/helix";
 
     home-manager = {

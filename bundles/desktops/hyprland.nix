@@ -2,7 +2,6 @@
   lib,
   config,
   inputs',
-  self',
   ...
 }:
 lib.mkIf (config.gaia.desktop == "hyprland") {
@@ -79,7 +78,7 @@ lib.mkIf (config.gaia.desktop == "hyprland") {
               "SUPER, Return, exec, ${lib.getExe pkgs.kitty}"
               "SUPER SHIFT, S, exec, ${lib.getExe pkgs.grimblast} copy area"
               "SUPER, Space, exec, vicinae toggle"
-              "SUPER, F, exec, ${lib.getExe self'.packages.helium-bin}"
+              "SUPER, F, exec, helium"
               "SUPER, E, exec, ${lib.getExe pkgs.nautilus} --new-window"
 
               "SUPER SHIFT, Q, killactive"
