@@ -50,6 +50,7 @@
       vial.enable = true;
       wivrn.enable = true;
       zed.enable = true;
+      zoxide.enable = true;
       # keep-sorted end
     };
     state.system = "25.11";
