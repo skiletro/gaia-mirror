@@ -1,4 +1,4 @@
-{ bundleLib, ... }:
+{ bundleLib, self', ... }:
 bundleLib.mkEnableModule [ "gaia" "programs" "term-utils" ] {
 
   home-manager =
@@ -21,7 +21,7 @@ bundleLib.mkEnableModule [ "gaia" "programs" "term-utils" ] {
         ouch # cli for compressing and decompressing formats
         outfieldr # `tldr` client
         pik # Interactive pkill
-        # self'.packages.eos-helpers
+        self'.packages.eos-helpers
         unrar
         wget
         yt-dlp
