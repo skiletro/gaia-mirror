@@ -28,6 +28,7 @@ bundleLib.mkEnableModule [ "gaia" "programs" "suite" ] {
           gnome-connections
           gnome-console
           gnome-contacts
+          gnome-disk-utility
           gnome-font-viewer
           gnome-maps
           gnome-music
@@ -45,14 +46,13 @@ bundleLib.mkEnableModule [ "gaia" "programs" "suite" ] {
         ]
       );
 
-      programs.gnome-disks.enable = true;
-
       environment.systemPackages = with pkgs; [
         # keep-sorted start
         adwaita-icon-theme # fixes some missing icons
         adwaita-icon-theme-legacy # fixes some missing icons
         file-roller # archive manager (just use ouch on cli)
         gapless # music player
+        gparted
         libheif # nautilus heic img preview
         libheif.out # nautilus heic img preview
         pwvucontrol
