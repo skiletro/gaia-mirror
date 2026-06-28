@@ -50,6 +50,8 @@ in
       };
 
       xresources.path = "${config.xdg.configHome}/.Xresources";
+
+      xdg.portal.xdgOpenUsePortal = true;
     };
 
   darwin = {
