@@ -1,4 +1,4 @@
-{ bundleLib, ... }:
+{ bundleLib, lib, ... }:
 bundleLib.mkEnableModule [ "gaia" "programs" "git" ] {
 
   home-manager =
@@ -22,11 +22,6 @@ bundleLib.mkEnableModule [ "gaia" "programs" "git" ] {
           };
         };
 
-        diff-so-fancy = {
-          enable = true;
-          enableGitIntegration = true;
-        };
-
         lazygit = {
           enable = true;
           settings = {
@@ -43,7 +38,8 @@ bundleLib.mkEnableModule [ "gaia" "programs" "git" ] {
             };
             git.pagers = [
               {
-                pager = "diff-so-fancy";
+                pager = "${lib.getExe pkgs.delta} --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format=\"lazygit-edit://{path}:{line}\"";
+                colorArg = "always";
               }
             ];
             disableStartupPopups = true;
