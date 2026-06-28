@@ -37,7 +37,7 @@ in
     };
 
   home-manager =
-    { pkgs, ... }:
+    { pkgs, config, ... }:
     {
       home = {
         inherit username;
@@ -48,6 +48,8 @@ in
           "/${homeDir}/${username}";
         preferXdgDirectories = true;
       };
+
+      xresources.path = "${config.xdg.configHome}/.Xresources";
     };
 
   darwin = {
