@@ -22,6 +22,7 @@ bundleLib.mkEnableModule [ "gaia" "programs" "term-utils" ] {
         outfieldr # `tldr` client
         pik # Interactive pkill
         self'.packages.eos-helpers
+        tree
         unrar
         wget
         yt-dlp
