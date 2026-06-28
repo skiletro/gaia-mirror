@@ -46,6 +46,7 @@ in
             homeDir = if pkgs.stdenvNoCC.hostPlatform.isDarwin then "Users" else "home";
           in
           "/${homeDir}/${username}";
+        preferXdgDirectories = true;
       };
     };
 
