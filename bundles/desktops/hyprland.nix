@@ -137,6 +137,7 @@ lib.mkIf (config.gaia.desktop == "hyprland") {
 
             decoration = {
               rounding = 6;
+              rounding_power = 4.0;
               blur = {
                 enabled = true;
                 size = 3;
