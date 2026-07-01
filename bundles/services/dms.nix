@@ -13,8 +13,8 @@ bundleLib.mkEnableModule [ "gaia" "services" "dms" ] {
         restartIfChanged = true;
       };
       enable = true;
-      enableSystemMonitoring = true;
-      enableVPN = true;
+      enableSystemMonitoring = false;
+      enableVPN = false;
       enableDynamicTheming = false; # we use stylix instead
       enableAudioWavelength = true;
       enableCalendarEvents = true;
