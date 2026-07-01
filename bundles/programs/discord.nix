@@ -39,7 +39,7 @@ bundleLib.mkEnableModule [ "gaia" "programs" "discord" ] {
           notifyAboutUpdates = false;
           plugins = {
             betterGifPicker.enable = true;
-            ClearURLs.enable = true;
+            clearUrls.enable = true;
             crashHandler.enable = true;
             fakeNitro.enable = true;
             favoriteGifSearch.enable = true;
