@@ -26,6 +26,7 @@
       # keep-sorted start
       broot.enable = true;
       btop.enable = true;
+      devenv.enable = true;
       direnv.enable = true;
       discord.enable = true;
       gamemode.enable = true;
