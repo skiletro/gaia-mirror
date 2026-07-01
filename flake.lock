@@ -167,6 +167,26 @@
         "type": "github"
       }
     },
+    "dcal": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1782918265,
+        "narHash": "sha256-ird6H6U3WKZSY9aG03LpNNhL3bebe3GwCujIdCZ0RFo=",
+        "owner": "AvengeMedia",
+        "repo": "DankCalendar",
+        "rev": "49b7478224fe225310f469541ed970cf322a53ba",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AvengeMedia",
+        "repo": "DankCalendar",
+        "type": "github"
+      }
+    },
     "disko": {
       "inputs": {
         "nixpkgs": [
@@ -1434,6 +1454,7 @@
       "inputs": {
         "bundle": "bundle",
         "cursors": "cursors",
+        "dcal": "dcal",
         "disko": "disko",
         "dms": "dms",
         "dms-plugin-registry": "dms-plugin-registry",

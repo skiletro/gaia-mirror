@@ -7,6 +7,11 @@
 
     cursors.url = "github:lilleaila/nix-cursors";
 
+    dcal = {
+      url = "github:AvengeMedia/DankCalendar";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";

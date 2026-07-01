@@ -2,7 +2,10 @@
 bundleLib.mkEnableModule [ "gaia" "services" "dms" ] {
 
   nixos = {
-    imports = [ inputs.dms.nixosModules.dank-material-shell ];
+    imports = with inputs; [
+      dms.nixosModules.dank-material-shell
+      dcal.nixosModules.dank-calendar
+    ];
 
     programs.dank-material-shell = {
       systemd = {
@@ -16,6 +19,14 @@ bundleLib.mkEnableModule [ "gaia" "services" "dms" ] {
       enableAudioWavelength = true;
       enableCalendarEvents = true;
       enableClipboardPaste = true;
+    };
+
+    programs.dank-calendar = {
+      enable = true;
+      systemd = {
+        enable = true;
+        restartIfChanged = true;
+      };
     };
   };
 
