@@ -173,8 +173,6 @@ lib.mkIf (config.gaia.desktop == "hyprland") {
               disable_hyprland_logo = true;
               disable_splash_rendering = true;
               focus_on_activate = true;
-              enable_swallow = true;
-              swallow_regex = "^(kitty|ghostty|alacritty|foot)$";
               mouse_move_enables_dpms = true;
               key_press_enables_dpms = true;
               middle_click_paste = false;
