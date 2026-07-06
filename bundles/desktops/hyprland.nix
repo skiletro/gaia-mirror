@@ -229,6 +229,7 @@ lib.mkIf (config.gaia.desktop == "hyprland") {
               "class org.gnome.NautilusPreviewer"
               "initial_title ^(Signal Sticker Pack Creator)$"
               "class com.danklinux.dms"
+              "class Emulator" # normally Android emulator
             ]);
           };
       };
