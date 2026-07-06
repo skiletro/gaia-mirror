@@ -68,8 +68,9 @@ bundleLib.mkEnableModule [ "gaia" "services" "dms" ] {
           showLauncherButton = true;
           showWorkspaceSwitcher = true;
           showFocusedWindow = true;
-          showWeather = false;
-          weatherEnabled = false;
+          showWeather = true;
+          weatherEnabled = true;
+          useAutoLocation = true; # for weather
           showMusic = true;
           showClipboard = true;
           showCpuUsage = true;
