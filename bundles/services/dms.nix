@@ -161,13 +161,6 @@ bundleLib.mkEnableModule [ "gaia" "services" "dms" ] {
           dockIconSize = 45;
           dockIndicatorStyle = "line"; # one of "line", "circle"
 
-          # Frame
-          frameEnabled = true;
-          frameThickness = 2;
-          frameRounding = 12;
-          frameColor = "#000000";
-          frameBarSize = 32;
-
           # Bar settings
           barConfigs =
             let
