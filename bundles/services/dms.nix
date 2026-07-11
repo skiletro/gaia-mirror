@@ -266,8 +266,8 @@ bundleLib.mkEnableModule [ "gaia" "services" "dms" ] {
           powerActionHoldDUration = 0.75;
 
           # Idle
-          acLockTimeout = 180;
-          acPostLockMonitorTimeout = 900;
+          acLockTimeout = 5 * 60;
+          acPostLockMonitorTimeout = 15 * 60;
           lockBeforeSuspend = true;
         };
         session = {
