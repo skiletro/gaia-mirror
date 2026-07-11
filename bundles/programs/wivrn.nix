@@ -60,6 +60,4 @@ bundleLib.mkEnableModule [ "gaia" "programs" "wivrn" ] {
         };
     };
 
-  darwin = throw "gaia: 'wivrn' is incompatible with nixos.";
-
 }

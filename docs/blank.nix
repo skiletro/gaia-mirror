@@ -5,11 +5,6 @@ bundleLib.mkEnableModule [ "gaia" "programs" "blank" ] {
   nixos = {
 
   };
-
-  darwin = {
-
-  };
-
   home-manager = {
 
   };

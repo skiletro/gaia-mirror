@@ -56,12 +56,4 @@ in
     {
       inherit (settings pkgs) nix nixpkgs;
     };
-
-  darwin =
-    { pkgs, ... }:
-    {
-      inherit (settings pkgs) nix nixpkgs;
-    };
-
-  home-manager.nixpkgs.config.allowUnfree = true;
 }

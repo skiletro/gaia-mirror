@@ -6,11 +6,4 @@ bundleLib.mkEnableModule [ "gaia" "programs" "libreoffice" ] {
     {
       environment.systemPackages = [ pkgs.libreoffice ];
     };
-
-  darwin =
-    { pkgs, ... }:
-    {
-      environment.systemPackages = [ pkgs.libreoffice-bin ];
-    };
-
 }

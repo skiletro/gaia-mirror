@@ -58,17 +58,4 @@ bundleLib.mkEnableModule [ "gaia" "programs" "nu" ] {
           fi
         '';
     };
-
-  darwin =
-    { pkgs, ... }:
-    {
-      programs.zsh.interactiveShellInit =
-        # zsh
-        ''
-          if [ "$TERM" != "dumb" ] && [ -z "$ZSH_EXECUTION_STRING" ] && [ "$SHLVL" -le "2" ]; then
-            exec ${lib.getExe pkgs.nushell}
-          fi
-        '';
-    };
-
 }

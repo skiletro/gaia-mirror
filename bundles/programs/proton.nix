@@ -1,13 +1,15 @@
-{ bundleLib, self', ... }:
+{ bundleLib, ... }:
 bundleLib.mkEnableModule [ "gaia" "programs" "proton" ] {
 
   home-manager =
     { pkgs, ... }:
     {
-      home.packages = [
-        pkgs.protonmail-desktop
-        self'.packages.protonvpn-bin
-        self'.packages.protonpass-bin
+      home.packages = with pkgs; [
+        protonmail-desktop
+        proton-pass
+        proton-pass-cli
+        protonvpn-gui
+        proton-vpn-cli
       ];
     };
 

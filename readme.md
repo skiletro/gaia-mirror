@@ -8,7 +8,6 @@
 -----------|-----------------|------------------------------------------------
  eris      | x86-64_linux    | gaming pc: r7 7800x3D + rx 9070 xt
  keres     | aarch64-linux   | netcup 1000 arm g11
- moirai    | aarch64-darwin  | m1 macbook air running nix-darwin
  hemera    | x86-64_linux    | home server
 
 ## todo

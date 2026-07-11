@@ -14,8 +14,6 @@ lib.mkIf (config.gaia.desktop == "hyprland") {
     services.dms.enable = true;
   };
 
-  darwin = throw "gaia: 'hyprland' is incompatible with macos. try using 'aerospace' instead.";
-
   nixos = {
     programs.hyprland = {
       enable = true;

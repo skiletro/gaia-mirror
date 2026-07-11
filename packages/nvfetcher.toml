@@ -2,41 +2,6 @@
 fetch.url = "https://github.com/samuelngs/apple-emoji-linux/releases/download/$ver/AppleColorEmoji-Linux.ttf"
 src.github = "samuelngs/apple-emoji-linux"
 
-[equibop-bin]
-fetch.url = "https://github.com/Equicord/Equibop/releases/download/v$ver/Equibop-$ver-universal.dmg"
-src.github = "Equicord/Equibop"
-src.prefix = "v"
-
-[helium-appimage]
-fetch.url = "https://github.com/imputnet/helium-linux/releases/download/$ver/helium-$ver-x86_64.AppImage"
-src.github = "imputnet/helium-linux"
-
-[helium-dmg]
-fetch.url = "https://github.com/imputnet/helium-macos/releases/download/$ver/helium_$ver_arm64-macos.dmg"
-src.github = "imputnet/helium-macos"
-
-[pearcleaner-bin]
-fetch.url = "https://github.com/alienator88/Pearcleaner/releases/download/$ver/Pearcleaner.dmg"
-src.github = "alienator88/Pearcleaner"
-
 [proton-cachyos_x86_64_v3]
 fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64_v3.tar.xz"
 src.github = "CachyOS/proton-cachyos"
-
-[protonpass-bin]
-fetch.url = "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_$ver.dmg"
-src.webpage = "https://proton.me/download/PassDesktop/darwin/universal/version.json"
-src.regex = '"Version":\s*"([0-9.]+)"'
-
-[protonvpn-bin]
-fetch.url = "https://vpn.protondownload.com/download/macos/$ver/ProtonVPN_mac_v$ver.dmg"
-src.webpage = "https://protonvpn.com/download/macos/updates/v4/sparkle.xml"
-src.regex = '<title>Version\s+((?!beta)\d+\.\d+\.\d+)</title>'
-
-[spotiflac-cli]
-fetch.github = "Nizarberyan/SpotiFLAC"
-src.git = "https://github.com/Nizarberyan/SpotiFLAC.git"
-
-[swipeaerospace-bin]
-fetch.url = "https://github.com/MediosZ/SwipeAeroSpace/releases/download/$ver/SwipeAeroSpace.zip"
-src.github = "MediosZ/SwipeAeroSpace"

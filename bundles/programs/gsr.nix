@@ -26,6 +26,4 @@ bundleLib.mkEnableModule [ "gaia" "programs" "gsr" ] {
 
     };
 
-  darwin = throw "gaia: 'gsr' is incompatible with macos.";
-
 }

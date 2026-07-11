@@ -44,12 +44,6 @@ _build goal *args:
     echo -e "\e[35m>\e[0m {{ goal }}ing configuration..."
     {{ RUNNER }} nh os {{ goal }} -- {{ args }}
 
-[macos]
-[no-exit-message]
-[private]
-_build goal *args:
-    nh darwin {{ goal }} -- {{ args }}
-
 [no-exit-message]
 [private]
 _builder goal *args: _format _stage (_build goal args)
@@ -60,13 +54,6 @@ _builder goal *args: _format _stage (_build goal args)
 _gc:
     echo -e "\e[35m>\e[0m garbage collect the Nix store..."
     nh clean all -K 1d
-
-[macos]
-[no-exit-message]
-[private]
-_gc:
-    echo -e "\e[35m>\e[0m garbage collect the Nix store..."
-    nix store --gc --print-roots | egrep -v "^(/nix/var|/run/\w+-system|\{libproc)"
 
 #
 # Build Recipes

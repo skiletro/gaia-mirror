@@ -69,6 +69,4 @@ bundleLib.mkEnableModule [ "gaia" "programs" "vicinae" ] {
     };
   };
 
-  darwin = throw "gaia: 'vicinae' is incompatible with macos. use 'raycast' instead.";
-
 }

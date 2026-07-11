@@ -2,7 +2,6 @@ let
   username = "jamie";
   sshKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINnFEMa0S9zuA5cVg+Ktazz9gEevkDCNYIDX0WAMxcAC eos"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIcAzqMv0//j1mUVb/NBUiMgv2brdPv9HbNs83OkQZzq moirai"
   ];
 in
 {
@@ -36,15 +35,11 @@ in
     };
 
   home-manager =
-    { pkgs, config, ... }:
+    { config, ... }:
     {
       home = {
         inherit username;
-        homeDirectory =
-          let
-            homeDir = if pkgs.stdenvNoCC.hostPlatform.isDarwin then "Users" else "home";
-          in
-          "/${homeDir}/${username}";
+        homeDirectory = "/home/${username}";
         preferXdgDirectories = true;
       };
 
@@ -53,15 +48,4 @@ in
       xdg.portal.xdgOpenUsePortal = true;
     };
 
-  darwin = {
-    system.primaryUser = username;
-
-    users.users.${username} = {
-      name = username;
-      home = "/Users/${username}";
-      openssh.authorizedKeys.keys = sshKeys;
-    };
-
-    services.openssh.enable = true;
-  };
 }

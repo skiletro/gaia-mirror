@@ -75,45 +75,11 @@ in
     { pkgs, ... }:
     {
       stylix.icons = {
-        enable = lib.mkIf pkgs.stdenvNoCC.hostPlatform.isLinux true;
+        enable = true;
         package = pkgs.morewaita-icon-theme;
         dark = "MoreWaita";
         light = "MoreWaita";
       };
 
-      stylix.fonts.sizes.terminal = lib.mkIf pkgs.stdenvNoCC.isDarwin (lib.mkForce 16); # macos scaling is weird.
-    };
-
-  darwin =
-    { pkgs, config, ... }:
-    {
-      imports = [ inputs.stylix.darwinModules.stylix ];
-
-      stylix = {
-        enable = true;
-      }
-      // (sharedStylixConfig config pkgs);
-
-      system = {
-        activationScripts.postActivation.text =
-          # bash
-          ''
-            printf >&2 '%b' 'Setting \033[0;35mStylix\e[0m wallpaper...\n'
-            osascript -e 'tell application "System Events" to tell every desktop to set picture to "${config.stylix.image}" as POSIX file'
-          '';
-
-        defaults = {
-          NSGlobalDomain = {
-            AppleInterfaceStyle = "Dark";
-            AppleInterfaceStyleSwitchesAutomatically = false;
-            NSStatusItemSpacing = 8; # default=12
-            NSStatusItemSelectionPadding = 6; # default=6
-            _HIHideMenuBar = false;
-            NSAutomaticWindowAnimationsEnabled = false;
-          };
-          spaces.spans-displays = true;
-          dock.expose-group-apps = true;
-        };
-      };
     };
 }

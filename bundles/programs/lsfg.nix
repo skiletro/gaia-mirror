@@ -10,6 +10,4 @@ bundleLib.mkEnableModule [ "gaia" "programs" "lsfg" ] {
       ];
     };
 
-  darwin = throw "gaia: 'lsfg' is incompatible with macos.";
-
 }

@@ -1,6 +1,5 @@
 {
   bundleLib,
-  self',
   lib,
   inputs,
   ...
@@ -65,10 +64,6 @@ bundleLib.mkEnableModule [ "gaia" "programs" "helium" ] {
       "x-scheme-handler/about"
       "x-scheme-handler/unknown"
     ] (_: "helium.desktop");
-  };
-
-  darwin = {
-    environment.systemPackages = [ self'.packages.helium-bin ];
   };
 
 }

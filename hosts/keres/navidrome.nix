@@ -1,4 +1,3 @@
-{ self', ... }:
 {
   nixos =
     { pkgs, ... }:
@@ -29,7 +28,6 @@
       '';
 
       environment.systemPackages = [
-        self'.packages.spotiflac-cli
         pkgs.beets
       ];
 

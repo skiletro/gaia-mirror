@@ -39,11 +39,4 @@ bundleLib.mkEnableModule [ "gaia" "system" "virtualisation" ] {
         "libvirtd" # allows non-root to manage vms with libvirt
       ];
     };
-
-  darwin =
-    { pkgs, ... }:
-    {
-      environment.systemPackages = [ pkgs.utm ];
-    };
-
 }

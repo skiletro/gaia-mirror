@@ -14,6 +14,4 @@ bundleLib.mkEnableModule [ "gaia" "programs" "vial" ] {
 
     };
 
-  darwin.homebrew.casks = [ "vial" ];
-
 }

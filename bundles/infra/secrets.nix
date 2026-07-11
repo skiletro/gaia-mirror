@@ -24,14 +24,4 @@ in
       };
     };
 
-  darwin = {
-    imports = [ inputs.sops-nix.darwinModules.default ];
-
-    sops = {
-      inherit defaultSopsFile;
-      age.sshKeyPaths = [
-        "/Users/jamie/.ssh/id_ed25519"
-      ];
-    };
-  };
 }

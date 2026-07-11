@@ -14,80 +14,12 @@
       sha256 = "sha256-uMjtl/ZCuJuko2o+CWYZ8IBdBswlrhEW5pU7mBQq4gw=";
     };
   };
-  equibop-bin = {
-    pname = "equibop-bin";
-    version = "3.2.1";
-    src = fetchurl {
-      url = "https://github.com/Equicord/Equibop/releases/download/v3.2.1/Equibop-3.2.1-universal.dmg";
-      sha256 = "sha256-J7SWkMg96yTclfbhmNjcNQ3mY0KPqLO9wHe+YYvqc5w=";
-    };
-  };
-  helium-appimage = {
-    pname = "helium-appimage";
-    version = "0.13.6.1";
-    src = fetchurl {
-      url = "https://github.com/imputnet/helium-linux/releases/download/0.13.6.1/helium-0.13.6.1-x86_64.AppImage";
-      sha256 = "sha256-ZcZo/vFXWrZjuPjIt2MYbsxs4LU7NvpB3I6mrPzAJjE=";
-    };
-  };
-  helium-dmg = {
-    pname = "helium-dmg";
-    version = "0.13.6.1";
-    src = fetchurl {
-      url = "https://github.com/imputnet/helium-macos/releases/download/0.13.6.1/helium_0.13.6.1_arm64-macos.dmg";
-      sha256 = "sha256-YSYTfUJMRGtSsMiYNmIyEzdkxvvns6ZpgD1qKdL1p0Y=";
-    };
-  };
-  pearcleaner-bin = {
-    pname = "pearcleaner-bin";
-    version = "5.4.3";
-    src = fetchurl {
-      url = "https://github.com/alienator88/Pearcleaner/releases/download/5.4.3/Pearcleaner.dmg";
-      sha256 = "sha256-+hTyxyRhCbM3OzRiqoFxel+iSIr6QcpcWoc4TIh0mqY=";
-    };
-  };
   proton-cachyos_x86_64_v3 = {
     pname = "proton-cachyos_x86_64_v3";
     version = "cachyos-11.0-20260602-slr";
     src = fetchurl {
       url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260602-slr/proton-cachyos-11.0-20260602-slr-x86_64_v3.tar.xz";
       sha256 = "sha256-HZmTHTziUU2nfmSTinG8qJntTweI5Xtk8SZ3BnHgpmI=";
-    };
-  };
-  protonpass-bin = {
-    pname = "protonpass-bin";
-    version = "1.37.0";
-    src = fetchurl {
-      url = "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_1.37.0.dmg";
-      sha256 = "sha256-EhSj3d5HsvSIpbEKKfln5niOI1B97yNxD1dg1wlZsxw=";
-    };
-  };
-  protonvpn-bin = {
-    pname = "protonvpn-bin";
-    version = "6.1.0";
-    src = fetchurl {
-      url = "https://vpn.protondownload.com/download/macos/6.1.0/ProtonVPN_mac_v6.1.0.dmg";
-      sha256 = "sha256-u/J32eIgpQkvF87j4Lc3IKT0YkJHTx4JauL6TsXg/ls=";
-    };
-  };
-  spotiflac-cli = {
-    pname = "spotiflac-cli";
-    version = "780b8c9ae2f7ba8b3d7a8aae811db6ecb5ca52e3";
-    src = fetchFromGitHub {
-      owner = "Nizarberyan";
-      repo = "SpotiFLAC";
-      rev = "780b8c9ae2f7ba8b3d7a8aae811db6ecb5ca52e3";
-      fetchSubmodules = false;
-      sha256 = "sha256-pjDD7FZbuok4ccBN7sGWb0KzMFi4ZfsEcYmM1pWYyGU=";
-    };
-    date = "2026-03-12";
-  };
-  swipeaerospace-bin = {
-    pname = "swipeaerospace-bin";
-    version = "v0.3.1";
-    src = fetchurl {
-      url = "https://github.com/MediosZ/SwipeAeroSpace/releases/download/v0.3.1/SwipeAeroSpace.zip";
-      sha256 = "sha256-xd2UuSVxf3P1ncUc+8+3u+ZEPWBt2/Z0OuDKYhueRTY=";
     };
   };
 }

@@ -14,6 +14,4 @@ bundleLib.mkEnableModule [ "gaia" "programs" "obs" ] {
       };
     };
 
-  darwin.homebrew.casks = [ "obs" ];
-
 }

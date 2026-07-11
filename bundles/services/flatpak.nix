@@ -10,6 +10,4 @@ bundleLib.mkEnableModule [ "gaia" "services" "flatpak" ] {
       environment.systemPackages = [ pkgs.bazaar ];
     };
 
-  darwin = throw "gaia: 'flatpak' is incompatible with macos.";
-
 }

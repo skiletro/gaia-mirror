@@ -48,7 +48,4 @@ bundleLib.mkEnableModule [ "gaia" "programs" "steam" ] {
 
     };
 
-  darwin = {
-    config.homebrew.casks = [ "steam" ];
-  };
 }

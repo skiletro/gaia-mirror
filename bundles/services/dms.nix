@@ -284,6 +284,4 @@ bundleLib.mkEnableModule [ "gaia" "services" "dms" ] {
       };
     };
 
-  darwin = throw "gaia: 'dms' is incompatible with macos.";
-
 }

@@ -11,8 +11,4 @@
       };
     };
 
-  darwin = {
-    services.tailscale.enable = true;
-  };
-
 }

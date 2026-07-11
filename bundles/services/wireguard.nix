@@ -28,5 +28,4 @@ bundleLib.mkEnableModule [ "gaia" "services" "wireguard" ] {
       };
     };
 
-  darwin = throw "gaia: 'wireguard' is incompatible with macos at the moment.";
 }

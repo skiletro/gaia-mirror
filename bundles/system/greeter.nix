@@ -29,6 +29,4 @@ bundleLib.mkEnableModule [ "gaia" "system" "greeter" ] {
       };
     };
 
-  darwin = throw "gaia: greeters are unsupported on macos";
-
 }

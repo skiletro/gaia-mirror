@@ -28,6 +28,4 @@ bundleLib.mkEnableModule [ "gaia" "services" "appimage" ] {
       ];
     };
 
-  darwin = throw "gaia: 'appimage' is incompatible with macos.";
-
 }

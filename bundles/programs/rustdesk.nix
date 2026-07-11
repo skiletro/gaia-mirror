@@ -7,6 +7,4 @@ bundleLib.mkEnableModule [ "gaia" "programs" "rustdesk" ] {
       environment.systemPackages = [ pkgs.rustdesk-flutter ];
     };
 
-  darwin.homebrew.casks = [ "rustdesk" ];
-
 }
