@@ -12,7 +12,6 @@ bundleLib.mkEnableModule [ "gaia" "programs" "vicinae" ] {
       systemd.enable = true;
       extensions = with inputs'.vicinae-extensions.packages; [
         # keep-sorted start
-        bluetooth
         nix
         process-manager
         protondb-search
