@@ -17,6 +17,7 @@ bundleLib.mkEnableModule [ "gaia" "programs" "helium" ] {
           extensions = {
             # keep-sorted start
             augmented-steam = "dnhpnfgdlenaccegplpojghhmaamnnfp";
+            imgur-unblocker = "gnfldmcodokkpcejgdlffnjakifemick";
             kagi-search = "cdglnehniifkbagbbombnjghhcihifij";
             kagi-translate = "alblebhaoakdgapamjdifdfnaicpnklm";
             proton-pass = "ghmbeldphafepmbegfdlkpapadhbakde";
