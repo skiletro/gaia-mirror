@@ -252,6 +252,7 @@ bundleLib.mkEnableModule [ "gaia" "services" "noctalia" ] {
             size = 20;
           };
           screenshot.save_to_file = false;
+          launch_apps_as_systemd_services = true;
         };
       };
     };
