@@ -11,6 +11,7 @@ lib.mkIf (config.gaia.desktop == "hyprland") {
       vicinae.enable = true;
       suite.enable = true;
     };
+    services.noctalia.enable = true;
   };
 
   nixos = {
@@ -37,7 +38,6 @@ lib.mkIf (config.gaia.desktop == "hyprland") {
         systemd.enable = false;
         settings =
           let
-            # dms = cmd: "dms ipc call ${cmd}";
             pctl = cmd: "${lib.getExe pkgs.playerctl} -p spotify ${cmd}";
           in
           {
@@ -83,10 +83,9 @@ lib.mkIf (config.gaia.desktop == "hyprland") {
               "SUPER SHIFT, Space, togglefloating"
 
               "SUPER, P, exec, vicinae deeplink vicinae://launch/@leonkohli/vicinae-extension-process-manager-0/processes"
-              # "SUPER, N, exec, ${dms "notifications toggle"}"
               "SUPER SHIFT, P, exec, vicinae deeplink vicinae://launch/power"
               "SUPER, Period, exec, vicinae deeplink vicinae://launch/core/search-emojis"
-              # "SUPER, L, exec, ${dms "lock lock"}"
+              "SUPER, L, exec, noctalia msg session lock"
               "SUPER SHIFT, L, exec, ${lib.getExe pkgs.hyprpicker} | ${lib.getExe' pkgs.wl-clipboard "wl-copy"}"
 
               "SUPER, Left, movefocus, l"
@@ -102,7 +101,7 @@ lib.mkIf (config.gaia.desktop == "hyprland") {
               "SUPER, code:49, togglespecialworkspace" # code:49 = `
               "SUPER SHIFT, code:49, movetoworkspace, special"
 
-              # ", XF86PowerOff, exec, ${dms "lock lock"}"
+              ", XF86PowerOff, exec, noctalia msg session lock"
             ]
             ++ (builtins.concatLists (
               builtins.genList (i: [
@@ -112,11 +111,11 @@ lib.mkIf (config.gaia.desktop == "hyprland") {
             ));
 
             bindl = map (command: ", XF86${command}") [
-              # "AudioRaiseVolume, exec, ${dms "audio increment 2"}"
-              # "AudioLowerVolume, exec, ${dms "audio decrement 2"}"
-              # "AudioNext, exec, ${dms "mpris next"}"
-              # "AudioPrev, exec, ${dms "mpris previous"}"
-              # "AudioPlay, exec, ${dms "mpris playPause"}"
+              "AudioRaiseVolume, exec, noctalia msg volume-up"
+              "AudioLowerVolume, exec, noctalia msg volume-down"
+              "AudioNext, exec, noctalia msg media next"
+              "AudioPrev, exec, noctalia msg media previous"
+              "AudioPlay, exec, noctalia msg media toggle"
               "Launch9, exec, ${pctl "volume 0.02+"}"
               "Launch8, exec, ${pctl "volume 0.02-"}"
             ];
@@ -178,9 +177,7 @@ lib.mkIf (config.gaia.desktop == "hyprland") {
             cursor.no_warps = true;
 
             layerrule = [
-              "match:class ^(quickshell)$, no_anim on"
-              "match:class ^(quickshell)$, blur on"
-              # "match:class ^(dms:.*)$, ignore_alpha 0.3"
+              "match:namespace ^noctalia-(bar-.+|notification|dock|panel|attached-panel|osd)$, ignore_alpha 0.5"
             ];
 
             windowrule = [
@@ -225,7 +222,6 @@ lib.mkIf (config.gaia.desktop == "hyprland") {
               "class org.gnome.FileRoller"
               "class org.gnome.NautilusPreviewer"
               "initial_title ^(Signal Sticker Pack Creator)$"
-              # "class com.danklinux.dms"
               "class Emulator" # normally Android emulator
             ]);
           };

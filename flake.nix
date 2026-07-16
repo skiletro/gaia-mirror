@@ -64,6 +64,10 @@
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    noctalia-greeter.url = "github:noctalia-dev/noctalia-greeter";
+
+    noctalia.url = "github:noctalia-dev/noctalia/cachix";
+
     quickshell = {
       url = "git+https://git.outfoxxed.me/quickshell/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -106,12 +110,14 @@
       "https://hyprland.cachix.org"
       "https://attic.xuyh0120.win/lantian"
       "https://helix.cachix.org"
+      "https://noctalia.cachix.org"
     ];
     extra-trusted-public-keys = [
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
       "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
     ];
   };
 }

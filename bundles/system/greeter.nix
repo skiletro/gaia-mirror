@@ -1,9 +1,15 @@
-{ bundleLib, lib, ... }:
+{ bundleLib, inputs, ... }:
 bundleLib.mkEnableModule [ "gaia" "system" "greeter" ] {
 
-  nixos =
-    { config, ... }:
-    {
+  nixos = {
 
+    imports = [ inputs.noctalia-greeter.nixosModules.default ];
+
+    programs.noctalia-greeter = {
+      enable = true;
+      settings.keyboard.layout = "gb";
     };
+
+  };
+
 }
