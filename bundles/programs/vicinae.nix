@@ -19,6 +19,8 @@ bundleLib.mkEnableModule [ "gaia" "programs" "vicinae" ] {
       ];
       settings = {
         close_on_focus_loss = false;
+        launcher_window.compact_mode.enabled = true;
+        font.rendering = "native";
         providers = {
           "@Gelei/bluetooth-0".preferences.connectionToggleable = true;
           "@knoopx/nix-0".entrypoints = {
