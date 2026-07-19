@@ -1,6 +1,8 @@
 { bundleLib, lib, ... }:
 bundleLib.mkEnableModule [ "gaia" "programs" "gsr" ] {
 
+  gaia.autoStart = [ "gsr-ui launch-hide-announce" ];
+
   nixos =
     { self', config, ... }:
     let
@@ -13,17 +15,12 @@ bundleLib.mkEnableModule [ "gaia" "programs" "gsr" ] {
 
       environment.systemPackages = [ package ];
 
-      systemd.packages = [ package ];
-
       security.wrappers."gsr-global-hotkeys" = {
         owner = "root";
         group = "root";
         capabilities = "cap_setuid+ep";
         source = lib.getExe' package "gsr-global-hotkeys";
       };
-
-      systemd.user.services.gpu-screen-recorder-ui.wantedBy = [ "default.target" ]; # Start on startup
-
     };
 
 }
