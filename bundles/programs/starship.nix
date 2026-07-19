@@ -18,8 +18,8 @@ bundleLib.mkEnableModule [ "gaia" "programs" "starship" ] {
         {
           add_newline = true;
           format = lib.concatStrings [
-            "[╭╴](238)$os"
-            "$all[╰─󰁔](237)$character"
+            "[ ](238)$os"
+            "$all[ ->](237)$character"
           ];
 
           character = {
