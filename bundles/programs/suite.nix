@@ -55,7 +55,6 @@ bundleLib.mkEnableModule [ "gaia" "programs" "suite" ] {
         gparted
         libheif # nautilus heic img preview
         libheif.out # nautilus heic img preview
-        pwvucontrol
         # keep-sorted end
       ];
     };
