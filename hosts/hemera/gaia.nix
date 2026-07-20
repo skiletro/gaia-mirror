@@ -1,5 +1,6 @@
 {
   gaia = {
+    services.tailscale.enable = true;
     programs = {
       # keep-sorted start
       git.enable = true;

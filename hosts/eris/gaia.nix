@@ -19,6 +19,7 @@
       printing.enable = true;
       sunshine.enable = true;
       syncthing.enable = true;
+      tailscale.enable = true;
       wireguard.enable = true;
       # keep-sorted end
     };

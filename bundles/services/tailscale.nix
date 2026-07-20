@@ -1,4 +1,5 @@
-{
+{ bundleLib, ... }:
+bundleLib.mkEnableModule [ "gaia" "services" "tailscale" ] {
 
   nixos =
     { config, ... }:
