@@ -51,12 +51,20 @@ lib.mkIf (config.gaia.desktop == "niri") {
         prefer-no-csd = true;
 
         input = {
-          keyboard.xkb.layout = "gb";
-          focus-follows-mouse.enable = true;
+          keyboard.xkb = {
+            layout = "gb";
+            options = "ctrl:nocaps";
+          };
           mouse = {
             accel-speed = 0.6;
             accel-profile = "flat";
           };
+          touchpad = {
+            natural-scroll = true;
+            tap = false;
+            dwt = true; # disable when typing
+          };
+          focus-follows-mouse.enable = true;
           power-key-handling.enable = false;
         };
 
@@ -81,6 +89,8 @@ lib.mkIf (config.gaia.desktop == "niri") {
         };
 
         cursor.hide-when-typing = true;
+
+        hotkey-overlay.skip-at-startup = true;
 
         environment = {
           "NIXOS_OZONE_WL" = "1";
@@ -125,34 +135,28 @@ lib.mkIf (config.gaia.desktop == "niri") {
             "Mod+Ctrl+Shift+F".action.fullscreen-window = { };
             "Mod+Shift+Space".action.toggle-window-floating = { };
 
-            # Vicinae deep links
             "Mod+P".action.spawn =
               vicinae "vicinae://launch/@leonkohli/vicinae-extension-process-manager-0/processes";
             "Mod+Shift+P".action.spawn = vicinae "vicinae://launch/power";
             "Mod+Period".action.spawn = vicinae "vicinae://launch/core/search-emojis";
-            # Lock & screenshot
             "Mod+Delete".action.spawn = noctalia "session lock";
             "Mod+Shift+S".action.spawn = noctalia "screenshot-region";
 
-            # Focus — HJKL (primary)
+            # Focus window
             "Mod+H".action.focus-column-left = { };
             "Mod+J".action.focus-window-down = { };
             "Mod+K".action.focus-window-up = { };
             "Mod+L".action.focus-column-right = { };
-
-            # Focus — arrows (fallback)
             "Mod+Left".action.focus-column-left = { };
             "Mod+Down".action.focus-window-down = { };
             "Mod+Up".action.focus-window-up = { };
             "Mod+Right".action.focus-column-right = { };
 
-            # Move window — Shift+HJKL (primary)
+            # Move window
             "Mod+Shift+H".action.move-column-left = { };
             "Mod+Shift+J".action.move-window-down = { };
             "Mod+Shift+K".action.move-window-up = { };
             "Mod+Shift+L".action.move-column-right = { };
-
-            # Move window — Shift+arrows (fallback)
             "Mod+Shift+Left".action.move-column-left = { };
             "Mod+Shift+Down".action.move-window-down = { };
             "Mod+Shift+Up".action.move-window-up = { };
@@ -234,6 +238,7 @@ lib.mkIf (config.gaia.desktop == "niri") {
               xray = false;
             };
           }
+
           # Noctalia settings window
           {
             matches = [ { app-id = "dev.noctalia.Noctalia"; } ];
@@ -242,69 +247,44 @@ lib.mkIf (config.gaia.desktop == "niri") {
             default-window-height.fixed = 920;
           }
 
-          # Portals — float
+          # Steam notifications
           {
-            matches = [ { app-id = "org.freedesktop.impl.portal.desktop.gnome"; } ];
-            open-floating = true;
-          }
-          {
-            matches = [ { app-id = "xdg-desktop-portal-gtk"; } ];
-            open-floating = true;
-          }
-
-          # File dialogs — float
-          {
-            matches = [ { title = "^(Open File)(.*)$"; } ];
-            open-floating = true;
-          }
-          {
-            matches = [ { title = "^(Select a File)(.*)$"; } ];
-            open-floating = true;
-          }
-          {
-            matches = [ { title = "^(Open Folder)(.*)$"; } ];
-            open-floating = true;
-          }
-          {
-            matches = [ { title = "^(Save As)(.*)$"; } ];
-            open-floating = true;
-          }
-          {
-            matches = [ { title = "^(Library)(.*)$"; } ];
-            open-floating = true;
-          }
-          {
-            matches = [ { title = "^(File Upload)(.*)$"; } ];
-            open-floating = true;
-          }
-          {
-            matches = [ { title = "^(.*)(wants to save)$"; } ];
-            open-floating = true;
-          }
-          {
-            matches = [ { title = "^(.*)(wants to open)$"; } ];
-            open-floating = true;
+            matches = [
+              {
+                app-id = "steam";
+                title = ''r#"^notificationtoasts_\d+_desktop$"#'';
+              }
+            ];
+            default-floating-position = {
+              x = 10;
+              y = 10;
+              relative-to = "bottom-right";
+            };
           }
 
-          # Apps that should float
+          # Float rules
           {
-            matches = [ { app-id = "crashreporter"; } ];
-            open-floating = true;
-          }
-          {
-            matches = [ { app-id = "org\\.gnome\\.FileRoller"; } ];
-            open-floating = true;
-          }
-          {
-            matches = [ { app-id = "org\\.gnome\\.NautilusPreviewer"; } ];
-            open-floating = true;
-          }
-          {
-            matches = [ { title = "^(Signal Sticker Pack Creator)$"; } ];
-            open-floating = true;
-          }
-          {
-            matches = [ { app-id = "Emulator"; } ];
+            matches = [
+              # Portals
+              { app-id = "org.freedesktop.impl.portal.desktop.gnome"; }
+              { app-id = "xdg-desktop-portal-gtk"; }
+
+              # File dialogs
+              { title = "^(Open File)(.*)$"; }
+              { title = "^(Select a File)(.*)$"; }
+              { title = "^(Open Folder)(.*)$"; }
+              { title = "^(Save As)(.*)$"; }
+              { title = "^(Library)(.*)$"; }
+              { title = "^(File Upload)(.*)$"; }
+              { title = "^(.*)(wants to save)$"; }
+              { title = "^(.*)(wants to open)$"; }
+
+              # Apps
+              { app-id = "crashreporter"; }
+              { app-id = "org\\.gnome\\.FileRoller"; }
+              { app-id = "org\\.gnome\\.NautilusPreviewer"; }
+              { app-id = "Emulator"; }
+            ];
             open-floating = true;
           }
         ];
