@@ -5,34 +5,30 @@ let
   ];
 in
 {
-  nixos =
-    { config, ... }:
-    {
-      sops.secrets."jamie-password".neededForUsers = true;
-
-      users = {
-        mutableUsers = false; # forces declaration of user and group adding and modification
-        users.${username} = {
-          isNormalUser = true;
-          hashedPasswordFile = config.sops.secrets.jamie-password.path; # config reqires bootstrapping to get this pwd
-          extraGroups = [
-            "users" # default user group for users
-            "wheel" # sudo
-          ];
-          openssh.authorizedKeys.keys = sshKeys;
-        };
-      };
-
-      home-manager = {
-        useGlobalPkgs = true;
-        useUserPackages = true;
-      };
-
-      services.openssh = {
-        enable = true;
-        settings.PasswordAuthentication = false;
+  nixos = {
+    users = {
+      mutableUsers = false; # forces declaration of user and group adding and modification
+      users.${username} = {
+        isNormalUser = true;
+        hashedPassword = "$y$j9T$hyPw7ecQ4UMGe5ArOW0bD/$3Oz3yxROROz1eU9u3DiGB5y8a7g4mD/E3AIOx2Pm8x0";
+        extraGroups = [
+          "users" # default user group for users
+          "wheel" # sudo
+        ];
+        openssh.authorizedKeys.keys = sshKeys;
       };
     };
+
+    home-manager = {
+      useGlobalPkgs = true;
+      useUserPackages = true;
+    };
+
+    services.openssh = {
+      enable = true;
+      settings.PasswordAuthentication = false;
+    };
+  };
 
   home-manager =
     { config, ... }:
