@@ -30,7 +30,10 @@ lib.mkIf (config.gaia.desktop == "niri") {
       };
     };
 
-    services.displayManager.defaultSession = "niri-uwsm";
+    services = {
+      power-profiles-daemon.enable = true;
+      upower.enable = true;
+    };
 
     systemd.user.services = {
       niri-flake-polkit.enable = false;
