@@ -4,13 +4,7 @@ bundleLib.mkEnableModule [ "gaia" "programs" "signal" ] {
   nixos =
     { pkgs, ... }:
     {
-      environment.systemPackages = [ pkgs.flare-signal ];
-    };
-
-  home-manager =
-    { pkgs, ... }:
-    {
-      home.packages = [
+      environment.systemPackages = [
         (pkgs.signal-desktop.overrideAttrs (oldAttrs: {
           patches = oldAttrs.patches ++ [
             (pkgs.writeText "more-fps.patch" ''
@@ -23,7 +17,7 @@ bundleLib.mkEnableModule [ "gaia" "programs" "signal" ] {
                export const REQUESTED_SCREEN_SHARE_HEIGHT = 1800;
                // 15fps is much nicer but takes up a lot more CPU.
               -export const REQUESTED_SCREEN_SHARE_FRAMERATE = 5;
-              +export const REQUESTED_SCREEN_SHARE_FRAMERATE = 15;
+              +export const REQUESTED_SCREEN_SHARE_FRAMERATE = 20;
                
                export const MAX_FRAME_WIDTH = 2880;
                export const MAX_FRAME_HEIGHT = 1800;
@@ -33,5 +27,4 @@ bundleLib.mkEnableModule [ "gaia" "programs" "signal" ] {
         }))
       ];
     };
-
 }
