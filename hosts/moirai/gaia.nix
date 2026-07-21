@@ -19,10 +19,12 @@
       # keep-sorted start
       btop.enable = true;
       devenv.enable = true;
+      discord.enable = true;
       git.enable = true;
       helium.enable = true;
       helix.enable = true;
       nu.enable = true;
+      opencode.enable = true;
       signal.enable = true;
       term-utils.enable = true;
       zoxide.enable = true;
