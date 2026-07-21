@@ -129,6 +129,7 @@ lib.mkIf (config.gaia.desktop == "niri") {
             # App shortcuts
             "Mod+Return".action.spawn = "${lib.getExe pkgs.kitty}";
             "Mod+Space".action.spawn = strToList "vicinae toggle";
+            "XF86Search".action.spawn = strToList "vicinae toggle";
             "Mod+F".action.spawn = "helium";
             "Mod+E".action.spawn = strToList "${lib.getExe pkgs.nautilus} --new-window";
 
@@ -197,6 +198,16 @@ lib.mkIf (config.gaia.desktop == "niri") {
               repeat = false;
               action.spawn = noctalia "volume-down";
             };
+            "XF86AudioMute" = {
+              allow-when-locked = true;
+              repeat = false;
+              action.spawn = noctalia "volume-mute";
+            };
+            "XF86AudioMicMute" = {
+              allow-when-locked = true;
+              repeat = false;
+              action.spawn = noctalia "mic-mute";
+            };
             "XF86AudioNext" = {
               allow-when-locked = true;
               repeat = false;
@@ -216,6 +227,16 @@ lib.mkIf (config.gaia.desktop == "niri") {
               allow-when-locked = true;
               repeat = false;
               action.spawn = noctalia "session lock";
+            };
+            "XF86MonBrightnessUp" = {
+              allow-when-locked = true;
+              repeat = false;
+              action.spawn = noctalia "brightness-up current";
+            };
+            "XF86MonBrightnessDown" = {
+              allow-when-locked = true;
+              repeat = false;
+              action.spawn = noctalia "brightness-down current";
             };
           };
 
