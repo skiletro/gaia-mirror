@@ -71,8 +71,6 @@
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    noctalia-greeter.url = "github:noctalia-dev/noctalia-greeter";
-
     noctalia.url = "github:noctalia-dev/noctalia/cachix";
 
     quickshell = {
@@ -96,6 +94,11 @@
 
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    tuigreet = {
+      url = "github:NotAShelf/tuigreet";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

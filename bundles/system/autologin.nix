@@ -12,7 +12,6 @@ bundleLib.mkEnableModule [ "gaia" "system" "autologin" ] {
 
       systemd.services.greetd.serviceConfig = {
         KeyringMode = lib.mkForce "inherit";
-        Type = lib.mkForce "idle";
       };
 
       security.pam.services.greetd.rules.session.fde-boot-pw = {
