@@ -46,12 +46,13 @@ bundleLib.mkEnableModule [ "gaia" "programs" "git" ] {
             promptToReturnFromSubprocess = false;
           };
         };
+
+        gh.enable = true;
+
+        gh-dash.enable = true;
       };
 
-      home = {
-        shellAliases.lg = "lazygit";
-        packages = [ pkgs.gh ]; # necessary evil
-      };
+      home.shellAliases.lg = "lazygit";
     };
 
 }
