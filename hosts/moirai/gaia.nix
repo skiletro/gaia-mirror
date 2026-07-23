@@ -5,6 +5,7 @@
       # keep-sorted start
       autologin.enable = true;
       bluetooth.enable = true;
+      emulation.enable = true;
       fonts.enable = true;
       greeter.enable = true;
       # keep-sorted end
