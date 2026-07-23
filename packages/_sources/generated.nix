@@ -8,18 +8,18 @@
 {
   apple-emoji = {
     pname = "apple-emoji";
-    version = "macos-26-20260613-f1fc560b";
+    version = "macos-26-20260722-484daf4e";
     src = fetchurl {
-      url = "https://github.com/samuelngs/apple-emoji-linux/releases/download/macos-26-20260613-f1fc560b/AppleColorEmoji-Linux.ttf";
-      sha256 = "sha256-uMjtl/ZCuJuko2o+CWYZ8IBdBswlrhEW5pU7mBQq4gw=";
+      url = "https://github.com/samuelngs/apple-emoji-linux/releases/download/macos-26-20260722-484daf4e/AppleColorEmoji-Linux.ttf";
+      sha256 = "sha256-43x69iZaxKCvbVe8ZehhCad22ZZug0MzRVf2PaSCUW8=";
     };
   };
   proton-cachyos_x86_64_v3 = {
     pname = "proton-cachyos_x86_64_v3";
-    version = "cachyos-11.0-20260702-slr";
+    version = "cachyos-11.0-20260703-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260702-slr/proton-cachyos-11.0-20260702-slr-x86_64_v3.tar.xz";
-      sha256 = "sha256-ETl4U+uV+PtEhTXOviZVRxMGyAw0VsRrUs1Whwik/lw=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260703-slr/proton-cachyos-11.0-20260703-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-A+zUK9fUdOm6RDzoly2WeKH6Osvykg12HzU5eUbs4oQ=";
     };
   };
 }

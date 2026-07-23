@@ -81,5 +81,6 @@ in
         light = "MoreWaita";
       };
 
+      home.pointerCursor.enable = true;
     };
 }

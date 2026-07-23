@@ -8,7 +8,7 @@ bundleLib.mkEnableModule [ "gaia" "programs" "proton" ] {
         protonmail-desktop
         proton-pass
         proton-pass-cli
-        protonvpn-gui
+        proton-vpn
         proton-vpn-cli
       ];
     };
